@@ -1,150 +1,5 @@
 [
 	{
-		"type": "receive",
-		"stateMutability": "payable"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_LP_receiver",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_anchorAmount",
-		"inputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_anchorQuoteUsed",
-		"inputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_anchorReserve",
-		"inputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_anchorTokenUsed",
-		"inputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_lpFeeSplitter",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_poolFee",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint24",
-				"internalType": "uint24"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_v3PositionManager",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_wNative",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
 		"type": "function",
 		"name": "FEE_DENOMINATOR",
 		"inputs": [],
@@ -185,26 +40,13 @@
 	},
 	{
 		"type": "function",
-		"name": "V4_LP_FEE",
+		"name": "LP_receiver",
 		"inputs": [],
 		"outputs": [
 			{
 				"name": "",
-				"type": "uint24",
-				"internalType": "uint24"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "V4_TICK_SPACING",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "int24",
-				"internalType": "int24"
+				"type": "address",
+				"internalType": "address"
 			}
 		],
 		"stateMutability": "view"
@@ -224,6 +66,82 @@
 				"name": "",
 				"type": "bool",
 				"internalType": "bool"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "anchorAmount",
+		"inputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "anchorQuoteUsed",
+		"inputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "anchorReserve",
+		"inputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "anchorTokenUsed",
+		"inputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256",
+				"internalType": "uint256"
 			}
 		],
 		"stateMutability": "view"
@@ -261,94 +179,6 @@
 		"outputs": [
 			{
 				"name": "",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "payable"
-	},
-	{
-		"type": "function",
-		"name": "buyExactToken",
-		"inputs": [
-			{
-				"name": "exactAmountOut",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "maxAmountIn",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "token",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "to",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "deadline",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"outputs": [
-			{
-				"name": "amountIn",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "payable"
-	},
-	{
-		"type": "function",
-		"name": "buyExactTokenWithFee",
-		"inputs": [
-			{
-				"name": "exactAmountOut",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "maxAmountIn",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "token",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "to",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "deadline",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "extraFeeRate",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "extraFeeReceiver",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [
-			{
-				"name": "amountIn",
 				"type": "uint256",
 				"internalType": "uint256"
 			}
@@ -397,125 +227,12 @@
 		],
 		"outputs": [
 			{
-				"name": "amountOut",
+				"name": "",
 				"type": "uint256",
 				"internalType": "uint256"
 			}
 		],
 		"stateMutability": "payable"
-	},
-	{
-		"type": "function",
-		"name": "configFactory",
-		"inputs": [
-			{
-				"name": "_factory",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "configFeeVault",
-		"inputs": [
-			{
-				"name": "_quote",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "_feeVault",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "configListingFeeReceiver",
-		"inputs": [
-			{
-				"name": "_receiver",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "configMigrator",
-		"inputs": [
-			{
-				"name": "_migrator",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "allowed",
-				"type": "bool",
-				"internalType": "bool"
-			}
-		],
-		"outputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "configQuote",
-		"inputs": [
-			{
-				"name": "_quote",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "allowed",
-				"type": "bool",
-				"internalType": "bool"
-			}
-		],
-		"outputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "configV4",
-		"inputs": [
-			{
-				"name": "_poolManager",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "_v4PositionManager",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "_v4FeeHook",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "_positionLocker",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "_platformTreasury",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [],
-		"stateMutability": "nonpayable"
 	},
 	{
 		"type": "function",
@@ -663,29 +380,6 @@
 	},
 	{
 		"type": "function",
-		"name": "initialize",
-		"inputs": [
-			{
-				"name": "_factory",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "_listingFeeReceiver",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "_owner",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
 		"name": "isMigrator",
 		"inputs": [
 			{
@@ -718,7 +412,20 @@
 	},
 	{
 		"type": "function",
-		"name": "migrateToV3",
+		"name": "lpFeeSplitter",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "migrate",
 		"inputs": [
 			{
 				"name": "token",
@@ -762,45 +469,6 @@
 	},
 	{
 		"type": "function",
-		"name": "migrateToV4",
-		"inputs": [
-			{
-				"name": "token",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "amount0Min",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "amount1Min",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "deadline",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"outputs": [
-			{
-				"name": "poolId",
-				"type": "bytes32",
-				"internalType": "PoolId"
-			},
-			{
-				"name": "positionIds",
-				"type": "uint256[]",
-				"internalType": "uint256[]"
-			}
-		],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
 		"name": "owner",
 		"inputs": [],
 		"outputs": [
@@ -811,13 +479,6 @@
 			}
 		],
 		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "pause",
-		"inputs": [],
-		"outputs": [],
-		"stateMutability": "nonpayable"
 	},
 	{
 		"type": "function",
@@ -834,39 +495,13 @@
 	},
 	{
 		"type": "function",
-		"name": "platformTreasury",
+		"name": "poolFee",
 		"inputs": [],
 		"outputs": [
 			{
 				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "poolManager",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "positionLocker",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
+				"type": "uint24",
+				"internalType": "uint24"
 			}
 		],
 		"stateMutability": "view"
@@ -889,35 +524,6 @@
 		"outputs": [
 			{
 				"name": "amountOut",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "fee",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "previewBuyExact",
-		"inputs": [
-			{
-				"name": "token",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "exactAmountOut",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"outputs": [
-			{
-				"name": "amountIn",
 				"type": "uint256",
 				"internalType": "uint256"
 			},
@@ -960,13 +566,6 @@
 	},
 	{
 		"type": "function",
-		"name": "renounceOwnership",
-		"inputs": [],
-		"outputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
 		"name": "sell",
 		"inputs": [
 			{
@@ -993,55 +592,6 @@
 				"name": "deadline",
 				"type": "uint256",
 				"internalType": "uint256"
-			}
-		],
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "sellFromWithFee",
-		"inputs": [
-			{
-				"name": "amountIn",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "amountOutMin",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "token",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "to",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "deadline",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "extraFeeRate",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "extraFeeReceiver",
-				"type": "address",
-				"internalType": "address"
 			}
 		],
 		"outputs": [
@@ -1182,27 +732,7 @@
 	},
 	{
 		"type": "function",
-		"name": "transferOwnership",
-		"inputs": [
-			{
-				"name": "newOwner",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "unpause",
-		"inputs": [],
-		"outputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "v4FeeHook",
+		"name": "v3PositionManager",
 		"inputs": [],
 		"outputs": [
 			{
@@ -1215,7 +745,7 @@
 	},
 	{
 		"type": "function",
-		"name": "v4PositionManager",
+		"name": "wNative",
 		"inputs": [],
 		"outputs": [
 			{
@@ -1228,26 +758,54 @@
 	},
 	{
 		"type": "function",
-		"name": "withdraw",
+		"name": "whitelist",
 		"inputs": [
 			{
-				"name": "token",
+				"name": "",
 				"type": "address",
 				"internalType": "address"
-			},
+			}
+		],
+		"outputs": [
 			{
-				"name": "to",
+				"name": "",
+				"type": "bool",
+				"internalType": "bool"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "whitelistEnabled",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool",
+				"internalType": "bool"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "event",
+		"name": "FundAnchor",
+		"inputs": [
+			{
+				"name": "quote",
 				"type": "address",
+				"indexed": true,
 				"internalType": "address"
 			},
 			{
 				"name": "amount",
 				"type": "uint256",
+				"indexed": false,
 				"internalType": "uint256"
 			}
 		],
-		"outputs": [],
-		"stateMutability": "nonpayable"
+		"anonymous": false
 	},
 	{
 		"type": "event",
@@ -1277,8 +835,14 @@
 	},
 	{
 		"type": "event",
-		"name": "MigrationDust",
+		"name": "Listing",
 		"inputs": [
+			{
+				"name": "curve",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
 			{
 				"name": "token",
 				"type": "address",
@@ -1286,28 +850,52 @@
 				"internalType": "address"
 			},
 			{
-				"name": "poolId",
-				"type": "bytes32",
-				"indexed": true,
-				"internalType": "PoolId"
-			},
-			{
-				"name": "quoteDust",
-				"type": "uint256",
-				"indexed": false,
-				"internalType": "uint256"
-			},
-			{
-				"name": "tokenDust",
-				"type": "uint256",
-				"indexed": false,
-				"internalType": "uint256"
-			},
-			{
-				"name": "recipient",
+				"name": "pool",
 				"type": "address",
-				"indexed": false,
+				"indexed": true,
 				"internalType": "address"
+			},
+			{
+				"name": "tokenId",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "liquidity",
+				"type": "uint128",
+				"indexed": false,
+				"internalType": "uint128"
+			},
+			{
+				"name": "quoteAmount",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "tokenAmount",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "sqrtPriceX96",
+				"type": "uint160",
+				"indexed": false,
+				"internalType": "uint160"
+			},
+			{
+				"name": "tickLower",
+				"type": "int24",
+				"indexed": false,
+				"internalType": "int24"
+			},
+			{
+				"name": "tickUpper",
+				"type": "int24",
+				"indexed": false,
+				"internalType": "int24"
 			}
 		],
 		"anonymous": false
@@ -1352,6 +940,44 @@
 	},
 	{
 		"type": "event",
+		"name": "RegisterFailed",
+		"inputs": [
+			{
+				"name": "token",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "tokenId",
+				"type": "uint256",
+				"indexed": true,
+				"internalType": "uint256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "SetAnchorAmount",
+		"inputs": [
+			{
+				"name": "quote",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
 		"name": "SetFactory",
 		"inputs": [
 			{
@@ -1381,6 +1007,44 @@
 			},
 			{
 				"name": "feeVault",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "SetLPFeeSplitter",
+		"inputs": [
+			{
+				"name": "previous",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "current",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "SetLPReceiver",
+		"inputs": [
+			{
+				"name": "previous",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "current",
 				"type": "address",
 				"indexed": true,
 				"internalType": "address"
@@ -1428,14 +1092,8 @@
 	},
 	{
 		"type": "event",
-		"name": "SetV4Config",
+		"name": "SetV3Config",
 		"inputs": [
-			{
-				"name": "poolManager",
-				"type": "address",
-				"indexed": true,
-				"internalType": "address"
-			},
 			{
 				"name": "positionManager",
 				"type": "address",
@@ -1443,21 +1101,15 @@
 				"internalType": "address"
 			},
 			{
-				"name": "v4FeeHook",
+				"name": "fee",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			},
+			{
+				"name": "wNative",
 				"type": "address",
 				"indexed": true,
-				"internalType": "address"
-			},
-			{
-				"name": "positionLocker",
-				"type": "address",
-				"indexed": false,
-				"internalType": "address"
-			},
-			{
-				"name": "platformTreasury",
-				"type": "address",
-				"indexed": false,
 				"internalType": "address"
 			}
 		],
@@ -1661,90 +1313,39 @@
 	},
 	{
 		"type": "event",
-		"name": "V4Listing",
+		"name": "WhitelistEnabledSet",
 		"inputs": [
 			{
-				"name": "token",
+				"name": "enabled",
+				"type": "bool",
+				"indexed": false,
+				"internalType": "bool"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "WhitelistSet",
+		"inputs": [
+			{
+				"name": "account",
 				"type": "address",
 				"indexed": true,
 				"internalType": "address"
 			},
 			{
-				"name": "poolId",
-				"type": "bytes32",
-				"indexed": true,
-				"internalType": "PoolId"
-			},
-			{
-				"name": "positionIds",
-				"type": "uint256[]",
+				"name": "allowed",
+				"type": "bool",
 				"indexed": false,
-				"internalType": "uint256[]"
-			},
-			{
-				"name": "quoteAmount",
-				"type": "uint256",
-				"indexed": false,
-				"internalType": "uint256"
-			},
-			{
-				"name": "tokenAmount",
-				"type": "uint256",
-				"indexed": false,
-				"internalType": "uint256"
-			},
-			{
-				"name": "listingFee",
-				"type": "uint256",
-				"indexed": false,
-				"internalType": "uint256"
+				"internalType": "bool"
 			}
 		],
 		"anonymous": false
 	},
 	{
 		"type": "error",
-		"name": "CurveAlreadyMigrated",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "CurveNotMigrating",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "DeadlineExpired",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "InsufficientListingQuote",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "InvalidActualDust",
-		"inputs": []
-	},
-	{
-		"type": "error",
 		"name": "InvalidInitialization",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "InvalidTemplate",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "MinConsumedNotMet",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "NotAnchorToken",
 		"inputs": []
 	},
 	{
@@ -1776,11 +1377,6 @@
 	},
 	{
 		"type": "error",
-		"name": "PriceOutOfRange",
-		"inputs": []
-	},
-	{
-		"type": "error",
 		"name": "ReentrancyGuardReentrantCall",
 		"inputs": []
 	},
@@ -1794,143 +1390,5 @@
 				"internalType": "address"
 			}
 		]
-	},
-	{
-		"type": "error",
-		"name": "V3NotConfigured",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "V4NotConfigured",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "ZeroAmount",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "ZeroLiquidity",
-		"inputs": []
-	},
-	{
-		"type": "constructor",
-		"inputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "applySplitRoute",
-		"inputs": [
-			{
-				"name": "quote",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "token",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "protocolFee",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"outputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "configMultiFeeVault",
-		"inputs": [
-			{
-				"name": "_multiFeeVault",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "configRevenueRouter",
-		"inputs": [
-			{
-				"name": "_revenueRouter",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "multiFeeVault",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "revenueRouter",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "event",
-		"name": "SetRevenueRouter",
-		"inputs": [
-			{
-				"name": "revenueRouter",
-				"type": "address",
-				"indexed": true,
-				"internalType": "address"
-			}
-		],
-		"anonymous": false
-	},
-	{
-		"type": "event",
-		"name": "SplitRouteFailed",
-		"inputs": [
-			{
-				"name": "token",
-				"type": "address",
-				"indexed": true,
-				"internalType": "address"
-			},
-			{
-				"name": "quote",
-				"type": "address",
-				"indexed": true,
-				"internalType": "address"
-			},
-			{
-				"name": "amount",
-				"type": "uint256",
-				"indexed": false,
-				"internalType": "uint256"
-			}
-		],
-		"anonymous": false
 	}
 ]

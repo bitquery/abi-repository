@@ -1,0 +1,210 @@
+[
+	{
+		"type": "function",
+		"name": "TrenchManager",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "WNative",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "bondingCurveFactory",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "credit",
+		"inputs": [
+			{
+				"name": "creator",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "token",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "payable"
+	},
+	{
+		"type": "function",
+		"name": "creditsDev",
+		"inputs": [
+			{
+				"name": "creator",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "creditsProtocol",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "devClaim",
+		"inputs": [
+			{
+				"name": "creator",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"type": "function",
+		"name": "emergencyWithdraw",
+		"inputs": [
+			{
+				"name": "token",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"type": "function",
+		"name": "protocolClaim",
+		"inputs": [
+			{
+				"name": "amount",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"type": "event",
+		"name": "Credit",
+		"inputs": [
+			{
+				"name": "token",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "DevClaim",
+		"inputs": [
+			{
+				"name": "creator",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "EmergencyWithdraw",
+		"inputs": [
+			{
+				"name": "token",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "TrechOwnerClaim",
+		"inputs": [
+			{
+				"name": "amount",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			}
+		],
+		"anonymous": false
+	}
+]

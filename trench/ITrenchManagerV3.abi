@@ -5,147 +5,6 @@
 	},
 	{
 		"type": "function",
-		"name": "DEPRECATED_LP_receiver",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_anchorAmount",
-		"inputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_anchorQuoteUsed",
-		"inputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_anchorReserve",
-		"inputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_anchorTokenUsed",
-		"inputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_lpFeeSplitter",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_poolFee",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint24",
-				"internalType": "uint24"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_v3PositionManager",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "DEPRECATED_wNative",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
 		"name": "FEE_DENOMINATOR",
 		"inputs": [],
 		"outputs": [
@@ -172,6 +31,32 @@
 	},
 	{
 		"type": "function",
+		"name": "KUMBAYA_V3_ANCHOR_NATIVE_AMOUNT",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "KUMBAYA_V3_SQRT_PRICE_TOLERANCE_DENOMINATOR",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
 		"name": "LISTING_FEE_DENOMINATOR",
 		"inputs": [],
 		"outputs": [
@@ -185,45 +70,13 @@
 	},
 	{
 		"type": "function",
-		"name": "V4_LP_FEE",
+		"name": "LP_receiver",
 		"inputs": [],
 		"outputs": [
-			{
-				"name": "",
-				"type": "uint24",
-				"internalType": "uint24"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "V4_TICK_SPACING",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "int24",
-				"internalType": "int24"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "allowedQuotes",
-		"inputs": [
 			{
 				"name": "",
 				"type": "address",
 				"internalType": "address"
-			}
-		],
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool",
-				"internalType": "bool"
 			}
 		],
 		"stateMutability": "view"
@@ -269,94 +122,6 @@
 	},
 	{
 		"type": "function",
-		"name": "buyExactToken",
-		"inputs": [
-			{
-				"name": "exactAmountOut",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "maxAmountIn",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "token",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "to",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "deadline",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"outputs": [
-			{
-				"name": "amountIn",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "payable"
-	},
-	{
-		"type": "function",
-		"name": "buyExactTokenWithFee",
-		"inputs": [
-			{
-				"name": "exactAmountOut",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "maxAmountIn",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "token",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "to",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "deadline",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "extraFeeRate",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "extraFeeReceiver",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [
-			{
-				"name": "amountIn",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "payable"
-	},
-	{
-		"type": "function",
 		"name": "buyWithFee",
 		"inputs": [
 			{
@@ -385,19 +150,19 @@
 				"internalType": "uint256"
 			},
 			{
-				"name": "extraFeeRate",
+				"name": "buyFeeRate",
 				"type": "uint256",
 				"internalType": "uint256"
 			},
 			{
-				"name": "extraFeeReceiver",
+				"name": "buyFeeReceiver",
 				"type": "address",
 				"internalType": "address"
 			}
 		],
 		"outputs": [
 			{
-				"name": "amountOut",
+				"name": "",
 				"type": "uint256",
 				"internalType": "uint256"
 			}
@@ -419,15 +184,28 @@
 	},
 	{
 		"type": "function",
-		"name": "configFeeVault",
+		"name": "configKumbayaV3PositionManager",
 		"inputs": [
 			{
-				"name": "_quote",
+				"name": "_positionManager",
 				"type": "address",
 				"internalType": "address"
 			},
 			{
-				"name": "_feeVault",
+				"name": "_fee",
+				"type": "uint24",
+				"internalType": "uint24"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"type": "function",
+		"name": "configLPReceiver",
+		"inputs": [
+			{
+				"name": "_LP_receiver",
 				"type": "address",
 				"internalType": "address"
 			}
@@ -440,7 +218,7 @@
 		"name": "configListingFeeReceiver",
 		"inputs": [
 			{
-				"name": "_receiver",
+				"name": "_listingFeeReceiver",
 				"type": "address",
 				"internalType": "address"
 			}
@@ -468,12 +246,25 @@
 	},
 	{
 		"type": "function",
-		"name": "configQuote",
+		"name": "configMigrator",
 		"inputs": [
 			{
-				"name": "_quote",
+				"name": "_migrator",
 				"type": "address",
 				"internalType": "address"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"type": "function",
+		"name": "configMigrators",
+		"inputs": [
+			{
+				"name": "_migrators",
+				"type": "address[]",
+				"internalType": "address[]"
 			},
 			{
 				"name": "allowed",
@@ -486,30 +277,10 @@
 	},
 	{
 		"type": "function",
-		"name": "configV4",
+		"name": "configVault",
 		"inputs": [
 			{
-				"name": "_poolManager",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "_v4PositionManager",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "_v4FeeHook",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "_positionLocker",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "_platformTreasury",
+				"name": "_vault",
 				"type": "address",
 				"internalType": "address"
 			}
@@ -521,11 +292,6 @@
 		"type": "function",
 		"name": "createCurve",
 		"inputs": [
-			{
-				"name": "quoteAddr",
-				"type": "address",
-				"internalType": "address"
-			},
 			{
 				"name": "creator",
 				"type": "address",
@@ -574,7 +340,7 @@
 				"internalType": "address"
 			},
 			{
-				"name": "virtualQuote",
+				"name": "virtualNative",
 				"type": "uint256",
 				"internalType": "uint256"
 			},
@@ -644,14 +410,15 @@
 	},
 	{
 		"type": "function",
-		"name": "feeVaults",
-		"inputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
+		"name": "fundKumbayaV3AnchorNative",
+		"inputs": [],
+		"outputs": [],
+		"stateMutability": "payable"
+	},
+	{
+		"type": "function",
+		"name": "getFeeVault",
+		"inputs": [],
 		"outputs": [
 			{
 				"name": "",
@@ -671,12 +438,17 @@
 				"internalType": "address"
 			},
 			{
-				"name": "_listingFeeReceiver",
+				"name": "_wNative",
 				"type": "address",
 				"internalType": "address"
 			},
 			{
-				"name": "_owner",
+				"name": "_vault",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "_listingFeeReceiver",
 				"type": "address",
 				"internalType": "address"
 			}
@@ -705,6 +477,32 @@
 	},
 	{
 		"type": "function",
+		"name": "kumbayaV3Fee",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint24",
+				"internalType": "uint24"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "kumbayaV3PositionManager",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
 		"name": "listingFeeReceiver",
 		"inputs": [],
 		"outputs": [
@@ -715,6 +513,25 @@
 			}
 		],
 		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "migrate",
+		"inputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"stateMutability": "pure"
 	},
 	{
 		"type": "function",
@@ -756,48 +573,32 @@
 				"name": "liquidity",
 				"type": "uint128",
 				"internalType": "uint128"
+			},
+			{
+				"name": "amount0",
+				"type": "uint256",
+				"internalType": "uint256"
+			},
+			{
+				"name": "amount1",
+				"type": "uint256",
+				"internalType": "uint256"
 			}
 		],
 		"stateMutability": "nonpayable"
 	},
 	{
 		"type": "function",
-		"name": "migrateToV4",
-		"inputs": [
-			{
-				"name": "token",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "amount0Min",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "amount1Min",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "deadline",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
+		"name": "migrator",
+		"inputs": [],
 		"outputs": [
 			{
-				"name": "poolId",
-				"type": "bytes32",
-				"internalType": "PoolId"
-			},
-			{
-				"name": "positionIds",
-				"type": "uint256[]",
-				"internalType": "uint256[]"
+				"name": "",
+				"type": "address",
+				"internalType": "address"
 			}
 		],
-		"stateMutability": "nonpayable"
+		"stateMutability": "view"
 	},
 	{
 		"type": "function",
@@ -834,54 +635,20 @@
 	},
 	{
 		"type": "function",
-		"name": "platformTreasury",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "poolManager",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "positionLocker",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "previewBuy",
+		"name": "quoteBuyWithFee",
 		"inputs": [
+			{
+				"name": "amountIn",
+				"type": "uint256",
+				"internalType": "uint256"
+			},
 			{
 				"name": "token",
 				"type": "address",
 				"internalType": "address"
 			},
 			{
-				"name": "amountIn",
+				"name": "buyFeeRate",
 				"type": "uint256",
 				"internalType": "uint256"
 			}
@@ -893,7 +660,27 @@
 				"internalType": "uint256"
 			},
 			{
-				"name": "fee",
+				"name": "protocolFee",
+				"type": "uint256",
+				"internalType": "uint256"
+			},
+			{
+				"name": "buyFee",
+				"type": "uint256",
+				"internalType": "uint256"
+			},
+			{
+				"name": "grossAmountUsed",
+				"type": "uint256",
+				"internalType": "uint256"
+			},
+			{
+				"name": "totalAmountInUsed",
+				"type": "uint256",
+				"internalType": "uint256"
+			},
+			{
+				"name": "refundAmount",
 				"type": "uint256",
 				"internalType": "uint256"
 			}
@@ -902,56 +689,42 @@
 	},
 	{
 		"type": "function",
-		"name": "previewBuyExact",
+		"name": "quoteSellWithFee",
 		"inputs": [
-			{
-				"name": "token",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "exactAmountOut",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"outputs": [
 			{
 				"name": "amountIn",
 				"type": "uint256",
 				"internalType": "uint256"
 			},
 			{
-				"name": "fee",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "previewSell",
-		"inputs": [
-			{
 				"name": "token",
 				"type": "address",
 				"internalType": "address"
 			},
 			{
-				"name": "amountIn",
+				"name": "sellFeeRate",
 				"type": "uint256",
 				"internalType": "uint256"
 			}
 		],
 		"outputs": [
 			{
-				"name": "netQuoteOut",
+				"name": "grossAmountOut",
 				"type": "uint256",
 				"internalType": "uint256"
 			},
 			{
-				"name": "fee",
+				"name": "netAmountOut",
+				"type": "uint256",
+				"internalType": "uint256"
+			},
+			{
+				"name": "protocolFee",
+				"type": "uint256",
+				"internalType": "uint256"
+			},
+			{
+				"name": "sellFee",
 				"type": "uint256",
 				"internalType": "uint256"
 			}
@@ -1006,55 +779,6 @@
 	},
 	{
 		"type": "function",
-		"name": "sellFromWithFee",
-		"inputs": [
-			{
-				"name": "amountIn",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "amountOutMin",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "token",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "to",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "deadline",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "extraFeeRate",
-				"type": "uint256",
-				"internalType": "uint256"
-			},
-			{
-				"name": "extraFeeReceiver",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
 		"name": "sellWithFee",
 		"inputs": [
 			{
@@ -1083,12 +807,12 @@
 				"internalType": "uint256"
 			},
 			{
-				"name": "extraFeeRate",
+				"name": "sellFeeRate",
 				"type": "uint256",
 				"internalType": "uint256"
 			},
 			{
-				"name": "extraFeeReceiver",
+				"name": "sellFeeReceiver",
 				"type": "address",
 				"internalType": "address"
 			}
@@ -1124,12 +848,7 @@
 				"internalType": "address"
 			},
 			{
-				"name": "quoteAddr",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "realQuoteReserves",
+				"name": "realNativeReserves",
 				"type": "uint256",
 				"internalType": "uint256"
 			},
@@ -1139,43 +858,24 @@
 				"internalType": "uint256"
 			},
 			{
-				"name": "virtualQuote",
+				"name": "virtualNativeReserve",
 				"type": "uint256",
 				"internalType": "uint256"
 			},
 			{
-				"name": "virtualToken",
+				"name": "virtualTokenReserve",
 				"type": "uint256",
 				"internalType": "uint256"
 			},
 			{
-				"name": "isMigrating_",
+				"name": "isMigrating",
 				"type": "bool",
 				"internalType": "bool"
 			},
 			{
-				"name": "isMigrated_",
+				"name": "isMigrated",
 				"type": "bool",
 				"internalType": "bool"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "tokenQuote",
-		"inputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
 			}
 		],
 		"stateMutability": "view"
@@ -1202,20 +902,58 @@
 	},
 	{
 		"type": "function",
-		"name": "v4FeeHook",
-		"inputs": [],
-		"outputs": [
+		"name": "v3AnchorNativeAmount",
+		"inputs": [
 			{
 				"name": "",
 				"type": "address",
 				"internalType": "address"
 			}
 		],
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
 		"stateMutability": "view"
 	},
 	{
 		"type": "function",
-		"name": "v4PositionManager",
+		"name": "v3AnchorTokenAmount",
+		"inputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "vault",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "contract IFeeVault"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "wNative",
 		"inputs": [],
 		"outputs": [
 			{
@@ -1251,6 +989,70 @@
 	},
 	{
 		"type": "event",
+		"name": "AdminChanged",
+		"inputs": [
+			{
+				"name": "previousAdmin",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			},
+			{
+				"name": "newAdmin",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "BeaconUpgraded",
+		"inputs": [
+			{
+				"name": "beacon",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "FeesCollected",
+		"inputs": [
+			{
+				"name": "lockId",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "FundKumbayaV3AnchorNative",
+		"inputs": [
+			{
+				"name": "funder",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
 		"name": "Initialized",
 		"inputs": [
 			{
@@ -1258,6 +1060,44 @@
 				"type": "uint64",
 				"indexed": false,
 				"internalType": "uint64"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "Initialized",
+		"inputs": [
+			{
+				"name": "version",
+				"type": "uint8",
+				"indexed": false,
+				"internalType": "uint8"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "LPLock",
+		"inputs": [
+			{
+				"name": "token",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			},
+			{
+				"name": "nftId",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "lockId",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
 			}
 		],
 		"anonymous": false
@@ -1277,8 +1117,45 @@
 	},
 	{
 		"type": "event",
-		"name": "MigrationDust",
+		"name": "LiquidityAdded",
 		"inputs": [
+			{
+				"name": "base",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			},
+			{
+				"name": "offers",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "quote",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			},
+			{
+				"name": "funds",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "Listing",
+		"inputs": [
+			{
+				"name": "curve",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
 			{
 				"name": "token",
 				"type": "address",
@@ -1286,28 +1163,28 @@
 				"internalType": "address"
 			},
 			{
-				"name": "poolId",
-				"type": "bytes32",
-				"indexed": true,
-				"internalType": "PoolId"
-			},
-			{
-				"name": "quoteDust",
-				"type": "uint256",
-				"indexed": false,
-				"internalType": "uint256"
-			},
-			{
-				"name": "tokenDust",
-				"type": "uint256",
-				"indexed": false,
-				"internalType": "uint256"
-			},
-			{
-				"name": "recipient",
+				"name": "pair",
 				"type": "address",
-				"indexed": false,
+				"indexed": true,
 				"internalType": "address"
+			},
+			{
+				"name": "listingWNativeAmount",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "listingTokenAmount",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "burnLiquidity",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
 			}
 		],
 		"anonymous": false
@@ -1333,19 +1210,88 @@
 	},
 	{
 		"type": "event",
-		"name": "QuoteUpdated",
+		"name": "Paused",
 		"inputs": [
 			{
-				"name": "quote",
+				"name": "account",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "RoleAdminChanged",
+		"inputs": [
+			{
+				"name": "role",
+				"type": "bytes32",
+				"indexed": true,
+				"internalType": "bytes32"
+			},
+			{
+				"name": "previousAdminRole",
+				"type": "bytes32",
+				"indexed": true,
+				"internalType": "bytes32"
+			},
+			{
+				"name": "newAdminRole",
+				"type": "bytes32",
+				"indexed": true,
+				"internalType": "bytes32"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "RoleGranted",
+		"inputs": [
+			{
+				"name": "role",
+				"type": "bytes32",
+				"indexed": true,
+				"internalType": "bytes32"
+			},
+			{
+				"name": "account",
 				"type": "address",
 				"indexed": true,
 				"internalType": "address"
 			},
 			{
-				"name": "allowed",
-				"type": "bool",
-				"indexed": false,
-				"internalType": "bool"
+				"name": "sender",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "RoleRevoked",
+		"inputs": [
+			{
+				"name": "role",
+				"type": "bytes32",
+				"indexed": true,
+				"internalType": "bytes32"
+			},
+			{
+				"name": "account",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "sender",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
 			}
 		],
 		"anonymous": false
@@ -1355,13 +1301,13 @@
 		"name": "SetFactory",
 		"inputs": [
 			{
-				"name": "previous",
+				"name": "previousFactory",
 				"type": "address",
 				"indexed": true,
 				"internalType": "address"
 			},
 			{
-				"name": "current",
+				"name": "newFactory",
 				"type": "address",
 				"indexed": true,
 				"internalType": "address"
@@ -1371,16 +1317,47 @@
 	},
 	{
 		"type": "event",
-		"name": "SetFeeVault",
+		"name": "SetKumbayaV3PositionManager",
 		"inputs": [
 			{
-				"name": "quote",
+				"name": "previousPositionManager",
 				"type": "address",
 				"indexed": true,
 				"internalType": "address"
 			},
 			{
-				"name": "feeVault",
+				"name": "newPositionManager",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "previousFee",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			},
+			{
+				"name": "newFee",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "SetLPReceiver",
+		"inputs": [
+			{
+				"name": "previousLPReceiver",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "newLPReceiver",
 				"type": "address",
 				"indexed": true,
 				"internalType": "address"
@@ -1393,13 +1370,13 @@
 		"name": "SetListingFeeReceiver",
 		"inputs": [
 			{
-				"name": "previous",
+				"name": "previousListingFeeReceiver",
 				"type": "address",
 				"indexed": true,
 				"internalType": "address"
 			},
 			{
-				"name": "current",
+				"name": "newListingFeeReceiver",
 				"type": "address",
 				"indexed": true,
 				"internalType": "address"
@@ -1428,36 +1405,18 @@
 	},
 	{
 		"type": "event",
-		"name": "SetV4Config",
+		"name": "SetVault",
 		"inputs": [
 			{
-				"name": "poolManager",
+				"name": "previousVault",
 				"type": "address",
 				"indexed": true,
 				"internalType": "address"
 			},
 			{
-				"name": "positionManager",
+				"name": "newVault",
 				"type": "address",
 				"indexed": true,
-				"internalType": "address"
-			},
-			{
-				"name": "v4FeeHook",
-				"type": "address",
-				"indexed": true,
-				"internalType": "address"
-			},
-			{
-				"name": "positionLocker",
-				"type": "address",
-				"indexed": false,
-				"internalType": "address"
-			},
-			{
-				"name": "platformTreasury",
-				"type": "address",
-				"indexed": false,
 				"internalType": "address"
 			}
 		],
@@ -1465,34 +1424,16 @@
 	},
 	{
 		"type": "event",
-		"name": "Sync",
+		"name": "TemplateAdded",
 		"inputs": [
 			{
-				"name": "token",
+				"name": "quote",
 				"type": "address",
-				"indexed": true,
+				"indexed": false,
 				"internalType": "address"
 			},
 			{
-				"name": "realQuoteReserves",
-				"type": "uint256",
-				"indexed": false,
-				"internalType": "uint256"
-			},
-			{
-				"name": "realTokenReserves",
-				"type": "uint256",
-				"indexed": false,
-				"internalType": "uint256"
-			},
-			{
-				"name": "virtualQuote",
-				"type": "uint256",
-				"indexed": false,
-				"internalType": "uint256"
-			},
-			{
-				"name": "virtualToken",
+				"name": "index",
 				"type": "uint256",
 				"indexed": false,
 				"internalType": "uint256"
@@ -1507,23 +1448,17 @@
 			{
 				"name": "creator",
 				"type": "address",
-				"indexed": true,
+				"indexed": false,
 				"internalType": "address"
 			},
 			{
 				"name": "curve",
 				"type": "address",
-				"indexed": true,
+				"indexed": false,
 				"internalType": "address"
 			},
 			{
 				"name": "token",
-				"type": "address",
-				"indexed": true,
-				"internalType": "address"
-			},
-			{
-				"name": "quote",
 				"type": "address",
 				"indexed": false,
 				"internalType": "address"
@@ -1541,7 +1476,7 @@
 				"internalType": "string"
 			},
 			{
-				"name": "timestamp",
+				"name": "launchTime",
 				"type": "uint256",
 				"indexed": false,
 				"internalType": "uint256"
@@ -1562,23 +1497,23 @@
 			{
 				"name": "token",
 				"type": "address",
-				"indexed": true,
+				"indexed": false,
 				"internalType": "address"
 			},
 			{
-				"name": "buyer",
+				"name": "account",
 				"type": "address",
-				"indexed": true,
+				"indexed": false,
 				"internalType": "address"
 			},
 			{
-				"name": "amountOut",
+				"name": "amountToken",
 				"type": "uint256",
 				"indexed": false,
 				"internalType": "uint256"
 			},
 			{
-				"name": "quoteAmountUsed",
+				"name": "amountQuote",
 				"type": "uint256",
 				"indexed": false,
 				"internalType": "uint256"
@@ -1590,19 +1525,19 @@
 				"internalType": "uint256"
 			},
 			{
-				"name": "extraFee",
+				"name": "buyFee",
 				"type": "uint256",
 				"indexed": false,
 				"internalType": "uint256"
 			},
 			{
-				"name": "extraFeeReceiver",
+				"name": "buyFeeReceiver",
 				"type": "address",
 				"indexed": false,
 				"internalType": "address"
 			},
 			{
-				"name": "extraFeeRate",
+				"name": "buyFeeRate",
 				"type": "uint256",
 				"indexed": false,
 				"internalType": "uint256"
@@ -1617,23 +1552,23 @@
 			{
 				"name": "token",
 				"type": "address",
-				"indexed": true,
+				"indexed": false,
 				"internalType": "address"
 			},
 			{
-				"name": "seller",
+				"name": "account",
 				"type": "address",
-				"indexed": true,
+				"indexed": false,
 				"internalType": "address"
 			},
 			{
-				"name": "amountIn",
+				"name": "amountToken",
 				"type": "uint256",
 				"indexed": false,
 				"internalType": "uint256"
 			},
 			{
-				"name": "netQuoteOut",
+				"name": "amountQuote",
 				"type": "uint256",
 				"indexed": false,
 				"internalType": "uint256"
@@ -1645,13 +1580,13 @@
 				"internalType": "uint256"
 			},
 			{
-				"name": "extraFee",
+				"name": "sellFee",
 				"type": "uint256",
 				"indexed": false,
 				"internalType": "uint256"
 			},
 			{
-				"name": "extraFeeReceiver",
+				"name": "sellFeeReceiver",
 				"type": "address",
 				"indexed": false,
 				"internalType": "address"
@@ -1661,8 +1596,66 @@
 	},
 	{
 		"type": "event",
-		"name": "V4Listing",
+		"name": "TokenSale2",
 		"inputs": [
+			{
+				"name": "origin",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "TradeStop",
+		"inputs": [
+			{
+				"name": "token",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "Unpaused",
+		"inputs": [
+			{
+				"name": "account",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "Upgraded",
+		"inputs": [
+			{
+				"name": "implementation",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "V3AnchorListing",
+		"inputs": [
+			{
+				"name": "curve",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
 			{
 				"name": "token",
 				"type": "address",
@@ -1670,19 +1663,25 @@
 				"internalType": "address"
 			},
 			{
-				"name": "poolId",
-				"type": "bytes32",
+				"name": "pool",
+				"type": "address",
 				"indexed": true,
-				"internalType": "PoolId"
+				"internalType": "address"
 			},
 			{
-				"name": "positionIds",
-				"type": "uint256[]",
+				"name": "tokenId",
+				"type": "uint256",
 				"indexed": false,
-				"internalType": "uint256[]"
+				"internalType": "uint256"
 			},
 			{
-				"name": "quoteAmount",
+				"name": "liquidity",
+				"type": "uint128",
+				"indexed": false,
+				"internalType": "uint128"
+			},
+			{
+				"name": "nativeAmount",
 				"type": "uint256",
 				"indexed": false,
 				"internalType": "uint256"
@@ -1694,7 +1693,148 @@
 				"internalType": "uint256"
 			},
 			{
-				"name": "listingFee",
+				"name": "sqrtPriceX96",
+				"type": "uint160",
+				"indexed": false,
+				"internalType": "uint160"
+			},
+			{
+				"name": "tickLower",
+				"type": "int24",
+				"indexed": false,
+				"internalType": "int24"
+			},
+			{
+				"name": "tickUpper",
+				"type": "int24",
+				"indexed": false,
+				"internalType": "int24"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "V3Listing",
+		"inputs": [
+			{
+				"name": "curve",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "token",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "pool",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "tokenId",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "liquidity",
+				"type": "uint128",
+				"indexed": false,
+				"internalType": "uint128"
+			},
+			{
+				"name": "amount0",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "amount1",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "sqrtPriceX96",
+				"type": "uint160",
+				"indexed": false,
+				"internalType": "uint160"
+			},
+			{
+				"name": "tickLower",
+				"type": "int24",
+				"indexed": false,
+				"internalType": "int24"
+			},
+			{
+				"name": "tickUpper",
+				"type": "int24",
+				"indexed": false,
+				"internalType": "int24"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "Withdraw",
+		"inputs": [
+			{
+				"name": "token",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "to",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "sync",
+		"inputs": [
+			{
+				"name": "token",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			},
+			{
+				"name": "realNativeReserves",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "realTokenReserves",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "virtualNativeReserve",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "virtualTokenReserve",
 				"type": "uint256",
 				"indexed": false,
 				"internalType": "uint256"
@@ -1704,47 +1844,17 @@
 	},
 	{
 		"type": "error",
-		"name": "CurveAlreadyMigrated",
+		"name": "EnforcedPause",
 		"inputs": []
 	},
 	{
 		"type": "error",
-		"name": "CurveNotMigrating",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "DeadlineExpired",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "InsufficientListingQuote",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "InvalidActualDust",
+		"name": "ExpectedPause",
 		"inputs": []
 	},
 	{
 		"type": "error",
 		"name": "InvalidInitialization",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "InvalidTemplate",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "MinConsumedNotMet",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "NotAnchorToken",
 		"inputs": []
 	},
 	{
@@ -1776,11 +1886,6 @@
 	},
 	{
 		"type": "error",
-		"name": "PriceOutOfRange",
-		"inputs": []
-	},
-	{
-		"type": "error",
 		"name": "ReentrancyGuardReentrantCall",
 		"inputs": []
 	},
@@ -1794,143 +1899,5 @@
 				"internalType": "address"
 			}
 		]
-	},
-	{
-		"type": "error",
-		"name": "V3NotConfigured",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "V4NotConfigured",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "ZeroAmount",
-		"inputs": []
-	},
-	{
-		"type": "error",
-		"name": "ZeroLiquidity",
-		"inputs": []
-	},
-	{
-		"type": "constructor",
-		"inputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "applySplitRoute",
-		"inputs": [
-			{
-				"name": "quote",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "token",
-				"type": "address",
-				"internalType": "address"
-			},
-			{
-				"name": "protocolFee",
-				"type": "uint256",
-				"internalType": "uint256"
-			}
-		],
-		"outputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "configMultiFeeVault",
-		"inputs": [
-			{
-				"name": "_multiFeeVault",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "configRevenueRouter",
-		"inputs": [
-			{
-				"name": "_revenueRouter",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"outputs": [],
-		"stateMutability": "nonpayable"
-	},
-	{
-		"type": "function",
-		"name": "multiFeeVault",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
-		"name": "revenueRouter",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "address",
-				"internalType": "address"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "event",
-		"name": "SetRevenueRouter",
-		"inputs": [
-			{
-				"name": "revenueRouter",
-				"type": "address",
-				"indexed": true,
-				"internalType": "address"
-			}
-		],
-		"anonymous": false
-	},
-	{
-		"type": "event",
-		"name": "SplitRouteFailed",
-		"inputs": [
-			{
-				"name": "token",
-				"type": "address",
-				"indexed": true,
-				"internalType": "address"
-			},
-			{
-				"name": "quote",
-				"type": "address",
-				"indexed": true,
-				"internalType": "address"
-			},
-			{
-				"name": "amount",
-				"type": "uint256",
-				"indexed": false,
-				"internalType": "uint256"
-			}
-		],
-		"anonymous": false
 	}
 ]

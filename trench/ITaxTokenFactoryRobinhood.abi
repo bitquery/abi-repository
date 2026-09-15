@@ -1,0 +1,463 @@
+[
+	{
+		"type": "constructor",
+		"inputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"type": "function",
+		"name": "INIT_REAL_TOKEN_RESERVES",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "LISTING_FEE_DENOMINATOR",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "batchConfig",
+		"inputs": [
+			{
+				"name": "quotes",
+				"type": "address[]",
+				"internalType": "address[]"
+			},
+			{
+				"name": "params",
+				"type": "tuple[]",
+				"internalType": "struct IBondingCurveFactory.ConfigParams[]",
+				"components": [
+					{
+						"name": "listingFeeRate",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "tokenTotalSupply",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "virtualQuote",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "virtualToken",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "quoteTarget",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "targetToken",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "realQuoteReserves",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "realTokenReserves",
+						"type": "uint256",
+						"internalType": "uint256"
+					}
+				]
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"type": "function",
+		"name": "config",
+		"inputs": [
+			{
+				"name": "quote",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "params",
+				"type": "tuple",
+				"internalType": "struct IBondingCurveFactory.ConfigParams",
+				"components": [
+					{
+						"name": "listingFeeRate",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "tokenTotalSupply",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "virtualQuote",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "virtualToken",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "quoteTarget",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "targetToken",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "realQuoteReserves",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "realTokenReserves",
+						"type": "uint256",
+						"internalType": "uint256"
+					}
+				]
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"type": "function",
+		"name": "create",
+		"inputs": [
+			{
+				"name": "quote",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "creator",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "name",
+				"type": "string",
+				"internalType": "string"
+			},
+			{
+				"name": "symbol",
+				"type": "string",
+				"internalType": "string"
+			},
+			{
+				"name": "tokenURI",
+				"type": "string",
+				"internalType": "string"
+			},
+			{
+				"name": "salt",
+				"type": "bytes32",
+				"internalType": "bytes32"
+			}
+		],
+		"outputs": [
+			{
+				"name": "curve",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "token",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "virtualQuote",
+				"type": "uint256",
+				"internalType": "uint256"
+			},
+			{
+				"name": "virtualToken",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"type": "function",
+		"name": "getConfig",
+		"inputs": [
+			{
+				"name": "quote",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [
+			{
+				"name": "",
+				"type": "tuple",
+				"internalType": "struct IBondingCurveFactory.Config",
+				"components": [
+					{
+						"name": "listingFeeRate",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "tokenTotalSupply",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "virtualQuote",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "virtualToken",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "k",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "quoteTarget",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "targetToken",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "realQuoteReserves",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "realTokenReserves",
+						"type": "uint256",
+						"internalType": "uint256"
+					}
+				]
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "getCore",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "getK",
+		"inputs": [
+			{
+				"name": "quote",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "getListingFeeRate",
+		"inputs": [
+			{
+				"name": "quote",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "initialize",
+		"inputs": [
+			{
+				"name": "_owner",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "_core",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"type": "function",
+		"name": "setCore",
+		"inputs": [
+			{
+				"name": "_core",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"type": "function",
+		"name": "setOwner",
+		"inputs": [
+			{
+				"name": "_owner",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"type": "event",
+		"name": "Initialized",
+		"inputs": [
+			{
+				"name": "version",
+				"type": "uint64",
+				"indexed": false,
+				"internalType": "uint64"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "SetConfig",
+		"inputs": [
+			{
+				"name": "quote",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "listingFeeRate",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "tokenTotalSupply",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "virtualQuote",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "virtualToken",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "k",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "quoteTarget",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "targetToken",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "realQuoteReserves",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "realTokenReserves",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "error",
+		"name": "InvalidInitialization",
+		"inputs": []
+	},
+	{
+		"type": "error",
+		"name": "NotInitializing",
+		"inputs": []
+	}
+]
