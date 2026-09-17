@@ -93,19 +93,6 @@
 	},
 	{
 		"type": "function",
-		"name": "MAX_TAX_BPS",
-		"inputs": [],
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint16",
-				"internalType": "uint16"
-			}
-		],
-		"stateMutability": "view"
-	},
-	{
-		"type": "function",
 		"name": "MAX_TIMELOCK_DELAY",
 		"inputs": [],
 		"outputs": [
