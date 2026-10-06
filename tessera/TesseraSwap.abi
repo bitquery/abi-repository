@@ -1,0 +1,235 @@
+[
+	{
+		"type": "constructor",
+		"inputs": [
+			{
+				"name": "_tesseraEngine",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "_tesseraTreasury",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "_tesseraOwner",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"name": "ReentrancyGuardReentrantCall",
+		"type": "error",
+		"inputs": []
+	},
+	{
+		"name": "SafeERC20FailedOperation",
+		"type": "error",
+		"inputs": [
+			{
+				"name": "token",
+				"type": "address",
+				"internalType": "address"
+			}
+		]
+	},
+	{
+		"name": "TesseraTrade",
+		"type": "event",
+		"inputs": [
+			{
+				"name": "tokenIn",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			},
+			{
+				"name": "tokenOut",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			},
+			{
+				"name": "amountIn",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "amountOut",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "recipient",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"name": "changeTesseraEngine",
+		"type": "function",
+		"inputs": [
+			{
+				"name": "newTesseraEngine",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"name": "changeTesseraTreasury",
+		"type": "function",
+		"inputs": [
+			{
+				"name": "newTesseraTreasury",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"name": "rescueTokens",
+		"type": "function",
+		"inputs": [
+			{
+				"name": "tokens",
+				"type": "address[]",
+				"internalType": "address[]"
+			},
+			{
+				"name": "amounts",
+				"type": "uint256[]",
+				"internalType": "uint256[]"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"name": "tesseraSwapViewAmounts",
+		"type": "function",
+		"inputs": [
+			{
+				"name": "tokenIn",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "tokenOut",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "amountSpecified",
+				"type": "int256",
+				"internalType": "int256"
+			}
+		],
+		"outputs": [
+			{
+				"name": "amountIn",
+				"type": "uint256",
+				"internalType": "uint256"
+			},
+			{
+				"name": "amountOut",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"name": "tesseraSwapWithAllowances",
+		"type": "function",
+		"inputs": [
+			{
+				"name": "tokenIn",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "tokenOut",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "amountSpecified",
+				"type": "int256",
+				"internalType": "int256"
+			},
+			{
+				"name": "amountCheck",
+				"type": "uint256",
+				"internalType": "uint256"
+			},
+			{
+				"name": "recipient",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "swapData",
+				"type": "bytes",
+				"internalType": "bytes"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"name": "tesseraSwapWithCallback",
+		"type": "function",
+		"inputs": [
+			{
+				"name": "tokenIn",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "tokenOut",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "amountSpecified",
+				"type": "int256",
+				"internalType": "int256"
+			},
+			{
+				"name": "amountCheck",
+				"type": "uint256",
+				"internalType": "uint256"
+			},
+			{
+				"name": "recipient",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "callbackData",
+				"type": "bytes",
+				"internalType": "bytes"
+			},
+			{
+				"name": "swapData",
+				"type": "bytes",
+				"internalType": "bytes"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	}
+]
