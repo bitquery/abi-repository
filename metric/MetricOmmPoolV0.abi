@@ -1,0 +1,173 @@
+[
+	{
+		"type": "event",
+		"name": "Swap",
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "exactInput",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "int128",
+				"name": "amount0Delta",
+				"type": "int128"
+			},
+			{
+				"indexed": false,
+				"internalType": "int128",
+				"name": "amount1Delta",
+				"type": "int128"
+			},
+			{
+				"indexed": false,
+				"internalType": "int16",
+				"name": "newTick",
+				"type": "int16"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint104",
+				"name": "newPositionInBin",
+				"type": "uint104"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "LiquidityModified",
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "provider",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint80",
+				"name": "salt",
+				"type": "uint80"
+			},
+			{
+				"indexed": false,
+				"internalType": "int128",
+				"name": "amount0Delta",
+				"type": "int128"
+			},
+			{
+				"indexed": false,
+				"internalType": "int128",
+				"name": "amount1Delta",
+				"type": "int128"
+			},
+			{
+				"indexed": false,
+				"internalType": "int16[]",
+				"name": "bins",
+				"type": "int16[]"
+			},
+			{
+				"indexed": false,
+				"internalType": "int104[]",
+				"name": "deltaShares",
+				"type": "int104[]"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "Instantiated",
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "factory",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "token0",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "token1",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "priceProvider",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint104",
+				"name": "initialToken0DensityPerLiquidityE18",
+				"type": "uint104"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint104",
+				"name": "initialToken1DensityPerLiquidityE18",
+				"type": "uint104"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint104",
+				"name": "minimalMintableLiquidity",
+				"type": "uint104"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "maxDriftE8",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "driftDecayPerSecondE8",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint24",
+				"name": "protocolFeeE6",
+				"type": "uint24"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint24",
+				"name": "adminFeeE6",
+				"type": "uint24"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "adminFeeDestination",
+				"type": "address"
+			}
+		],
+		"anonymous": false
+	}
+]

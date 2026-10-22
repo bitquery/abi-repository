@@ -1,0 +1,39 @@
+[
+	{
+		"type": "event",
+		"name": "PoolCreated",
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "token0",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "token1",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "priceProvider",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "pool",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "poolKey",
+				"type": "bytes32"
+			}
+		],
+		"anonymous": false
+	}
+]

@@ -1,0 +1,59 @@
+[
+	{
+		"type": "event",
+		"name": "ProtocolNotionalFeeDefaultUpdated",
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint24",
+				"name": "oldFeeE8",
+				"type": "uint24"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint24",
+				"name": "newFeeE8",
+				"type": "uint24"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "SpreadProtocolFeeDefaultUpdated",
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint24",
+				"name": "oldFeeE6",
+				"type": "uint24"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint24",
+				"name": "newFeeE6",
+				"type": "uint24"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "MaxBidAskRefAsymmetryUpdated",
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint16",
+				"name": "oldMaxX8",
+				"type": "uint16"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint16",
+				"name": "newMaxX8",
+				"type": "uint16"
+			}
+		],
+		"anonymous": false
+	}
+]

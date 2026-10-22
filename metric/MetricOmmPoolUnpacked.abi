@@ -1,0 +1,119 @@
+[
+	{
+		"type": "event",
+		"name": "BinAdditionalFeesUpdated",
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "int8",
+				"name": "bin",
+				"type": "int8"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint16",
+				"name": "addFeeBuyE6",
+				"type": "uint16"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint16",
+				"name": "addFeeSellE6",
+				"type": "uint16"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "BinSwapped",
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "int256",
+				"name": "binIdx",
+				"type": "int256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "int256",
+						"name": "delta0Scaled",
+						"type": "int256"
+					},
+					{
+						"internalType": "int256",
+						"name": "delta1Scaled",
+						"type": "int256"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct BinBalanceDelta",
+				"name": "delta",
+				"type": "tuple"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "lpFeeAmount",
+				"type": "uint256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "Swap",
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "exactInput",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "int256",
+				"name": "amount0Delta",
+				"type": "int256"
+			},
+			{
+				"indexed": false,
+				"internalType": "int256",
+				"name": "amount1Delta",
+				"type": "int256"
+			},
+			{
+				"indexed": false,
+				"internalType": "int8",
+				"name": "newTick",
+				"type": "int8"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint104",
+				"name": "newPositionInBin",
+				"type": "uint104"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "protocolFeeAmount",
+				"type": "uint256"
+			}
+		],
+		"anonymous": false
+	}
+]
