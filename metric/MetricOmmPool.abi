@@ -1,0 +1,301 @@
+[
+	{
+		"type": "event",
+		"name": "LiquidityAdded",
+		"inputs": [
+			{
+				"name": "provider",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "salt",
+				"type": "uint80",
+				"indexed": true,
+				"internalType": "uint80"
+			},
+			{
+				"name": "binIdxs",
+				"type": "int256[]",
+				"indexed": false,
+				"internalType": "int256[]"
+			},
+			{
+				"name": "binBalanceDeltas",
+				"type": "tuple[]",
+				"indexed": false,
+				"internalType": "struct BinBalanceDelta[]",
+				"components": [
+					{
+						"name": "delta0Scaled",
+						"type": "int256",
+						"internalType": "int256"
+					},
+					{
+						"name": "delta1Scaled",
+						"type": "int256",
+						"internalType": "int256"
+					}
+				]
+			},
+			{
+				"name": "shares",
+				"type": "uint256[]",
+				"indexed": false,
+				"internalType": "uint256[]"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "LiquidityRemoved",
+		"inputs": [
+			{
+				"name": "provider",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "salt",
+				"type": "uint80",
+				"indexed": true,
+				"internalType": "uint80"
+			},
+			{
+				"name": "binIdxs",
+				"type": "int256[]",
+				"indexed": false,
+				"internalType": "int256[]"
+			},
+			{
+				"name": "binBalanceDeltas",
+				"type": "tuple[]",
+				"indexed": false,
+				"internalType": "struct BinBalanceDelta[]",
+				"components": [
+					{
+						"name": "delta0Scaled",
+						"type": "int256",
+						"internalType": "int256"
+					},
+					{
+						"name": "delta1Scaled",
+						"type": "int256",
+						"internalType": "int256"
+					}
+				]
+			},
+			{
+				"name": "shares",
+				"type": "uint256[]",
+				"indexed": false,
+				"internalType": "uint256[]"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "BinSwapped",
+		"inputs": [
+			{
+				"name": "binIdx",
+				"type": "int256",
+				"indexed": false,
+				"internalType": "int256"
+			},
+			{
+				"name": "binDeltas",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "Packed2Int128"
+			},
+			{
+				"name": "fees",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "Packed2Uint128"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "Swap",
+		"inputs": [
+			{
+				"name": "sender",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "recipient",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "details",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "PackedSwapDetails"
+			},
+			{
+				"name": "amountDeltas",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "Packed2Int128"
+			},
+			{
+				"name": "platformFees",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "Packed2Uint128"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "FeeTransferFailed",
+		"inputs": [
+			{
+				"name": "token",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "destination",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "amount",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "ProtocolFeesCollected",
+		"inputs": [
+			{
+				"name": "amount0ToProtocol",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "amount1ToProtocol",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "amount0ToAdmin",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "amount1ToAdmin",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "SpreadFeeUpdated",
+		"inputs": [
+			{
+				"name": "spreadFeeE6",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "NotionalFeeUpdated",
+		"inputs": [
+			{
+				"name": "notionalFeeE8",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "PauseLevelUpdated",
+		"inputs": [
+			{
+				"name": "previousLevel",
+				"type": "uint8",
+				"indexed": false,
+				"internalType": "uint8"
+			},
+			{
+				"name": "newLevel",
+				"type": "uint8",
+				"indexed": false,
+				"internalType": "uint8"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "BinAdditionalFeesUpdated",
+		"inputs": [
+			{
+				"name": "bin",
+				"type": "int16",
+				"indexed": true,
+				"internalType": "int16"
+			},
+			{
+				"name": "addFeeBuyE6",
+				"type": "uint16",
+				"indexed": false,
+				"internalType": "uint16"
+			},
+			{
+				"name": "addFeeSellE6",
+				"type": "uint16",
+				"indexed": false,
+				"internalType": "uint16"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "BidAskRefAsymmetryUpdated",
+		"inputs": [
+			{
+				"name": "bidAskRefAsymmetryX8",
+				"type": "uint16",
+				"indexed": false,
+				"internalType": "uint16"
+			}
+		],
+		"anonymous": false
+	}
+]

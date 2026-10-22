@@ -1,0 +1,489 @@
+[
+	{
+		"type": "event",
+		"name": "PoolCreated",
+		"inputs": [
+			{
+				"name": "poolAddress",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "token0",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "token1",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "poolIdx",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "factory",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			},
+			{
+				"name": "admin",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			},
+			{
+				"name": "priceProvider",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			},
+			{
+				"name": "extensions",
+				"type": "address[]",
+				"indexed": false,
+				"internalType": "address[]"
+			},
+			{
+				"name": "extensionOrders",
+				"type": "tuple",
+				"indexed": false,
+				"internalType": "struct ExtensionOrders",
+				"components": [
+					{
+						"name": "beforeAddLiquidity",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "afterAddLiquidity",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "beforeRemoveLiquidity",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "afterRemoveLiquidity",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "beforeSwap",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "afterSwap",
+						"type": "uint256",
+						"internalType": "uint256"
+					}
+				]
+			},
+			{
+				"name": "priceProviderTimelock",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "initialScaledAmount0PerE18Shares",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "initialScaledAmount1PerE18Shares",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "minimalOperationalLiquidity",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			},
+			{
+				"name": "spreadProtocolFeeE6",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			},
+			{
+				"name": "protocolNotionalFeeE8",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			},
+			{
+				"name": "adminSpreadFeeE6",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			},
+			{
+				"name": "adminNotionalFeeE8",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			},
+			{
+				"name": "adminFeeDestination",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			},
+			{
+				"name": "curBinDistFromProvidedPriceE6",
+				"type": "int24",
+				"indexed": false,
+				"internalType": "int24"
+			},
+			{
+				"name": "nonNegativeBinDataArray",
+				"type": "uint256[]",
+				"indexed": false,
+				"internalType": "uint256[]"
+			},
+			{
+				"name": "negativeBinDataArray",
+				"type": "uint256[]",
+				"indexed": false,
+				"internalType": "uint256[]"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "PoolBidAskRefAsymmetryUpdated",
+		"inputs": [
+			{
+				"name": "pool",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "newBidAskRefAsymmetryX8",
+				"type": "uint16",
+				"indexed": false,
+				"internalType": "uint16"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "PoolProtocolSpreadFeeUpdated",
+		"inputs": [
+			{
+				"name": "pool",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "newProtocolSpreadFeeE6",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "PoolProtocolNotionalFeeUpdated",
+		"inputs": [
+			{
+				"name": "pool",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "newProtocolNotionalFeeE8",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "SpreadProtocolFeeDefaultUpdated",
+		"inputs": [
+			{
+				"name": "newFeeE6",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "ProtocolNotionalFeeDefaultUpdated",
+		"inputs": [
+			{
+				"name": "newFeeE8",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "OnCreationMaxBidAskRefAsymmetryUpdated",
+		"inputs": [
+			{
+				"name": "newMaxX8",
+				"type": "uint16",
+				"indexed": false,
+				"internalType": "uint16"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "FeeCapsUpdated",
+		"inputs": [
+			{
+				"name": "maxProtocolSpreadFeeE6",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			},
+			{
+				"name": "maxAdminSpreadFeeE6",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			},
+			{
+				"name": "maxProtocolNotionalFeeE8",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			},
+			{
+				"name": "maxAdminNotionalFeeE8",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "BinDistanceLimitsUpdated",
+		"inputs": [
+			{
+				"name": "newMinBinDistanceE6",
+				"type": "int256",
+				"indexed": false,
+				"internalType": "int256"
+			},
+			{
+				"name": "newMaxBinDistanceE6",
+				"type": "int256",
+				"indexed": false,
+				"internalType": "int256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "PoolAdminSpreadFeeUpdated",
+		"inputs": [
+			{
+				"name": "pool",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "newAdminSpreadFeeE6",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "PoolAdminNotionalFeeUpdated",
+		"inputs": [
+			{
+				"name": "pool",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "newAdminNotionalFeeE8",
+				"type": "uint24",
+				"indexed": false,
+				"internalType": "uint24"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "PoolAdminFeeDestinationUpdated",
+		"inputs": [
+			{
+				"name": "pool",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "newAdminFeeDestination",
+				"type": "address",
+				"indexed": false,
+				"internalType": "address"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "PoolAdminTransferred",
+		"inputs": [
+			{
+				"name": "pool",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "previousAdmin",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "newAdmin",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "PoolAdminTransferProposed",
+		"inputs": [
+			{
+				"name": "pool",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "currentAdmin",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "newAdmin",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "PoolAdminTransferCancelled",
+		"inputs": [
+			{
+				"name": "pool",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "cancelledPendingAdmin",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "PoolPriceProviderChangeProposed",
+		"inputs": [
+			{
+				"name": "pool",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "currentPriceProvider",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "newPriceProvider",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "executeAfter",
+				"type": "uint256",
+				"indexed": false,
+				"internalType": "uint256"
+			}
+		],
+		"anonymous": false
+	},
+	{
+		"type": "event",
+		"name": "PoolPriceProviderUpdated",
+		"inputs": [
+			{
+				"name": "pool",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			},
+			{
+				"name": "newPriceProvider",
+				"type": "address",
+				"indexed": true,
+				"internalType": "address"
+			}
+		],
+		"anonymous": false
+	}
+]
