@@ -1,0 +1,507 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "ConditionId",
+        "name": "conditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": false,
+        "internalType": "PositionId[]",
+        "name": "legs",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "CombinatorialConditionPrepared",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "PositionId",
+        "name": "oldPositionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "PositionId",
+        "name": "newPositionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "positionAmount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "collateralOut",
+        "type": "uint256"
+      }
+    ],
+    "name": "Compressed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "ConditionId",
+        "name": "parentConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": true,
+        "internalType": "EventId",
+        "name": "eventId",
+        "type": "bytes29"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "conditionIndex",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address[]",
+        "name": "recipients",
+        "type": "address[]"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "ConvertedOnEvent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "ConditionId",
+        "name": "fullConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": false,
+        "internalType": "address[]",
+        "name": "recipients",
+        "type": "address[]"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "ConvertedToYesBasket",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "ConditionId",
+        "name": "fullConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": false,
+        "internalType": "ConditionId",
+        "name": "reducedConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": false,
+        "internalType": "ConditionId",
+        "name": "residualConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "recipient0",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "recipient1",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "Extracted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "ConditionId",
+        "name": "fullConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": false,
+        "internalType": "ConditionId",
+        "name": "reducedConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": false,
+        "internalType": "ConditionId",
+        "name": "residualConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "Injected",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "ConditionId",
+        "name": "fullConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "MergedFromYesBasket",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "ConditionId",
+        "name": "parentConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": false,
+        "internalType": "ConditionId",
+        "name": "childYesConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": false,
+        "internalType": "ConditionId",
+        "name": "childNoConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "MergedOnCondition",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "ConditionId",
+        "name": "parentConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": true,
+        "internalType": "EventId",
+        "name": "eventId",
+        "type": "bytes29"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "MergedOnEvent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "ConditionId",
+        "name": "parentConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": false,
+        "internalType": "ConditionId",
+        "name": "childYesConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": false,
+        "internalType": "ConditionId",
+        "name": "childNoConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "recipient0",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "recipient1",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "SplitOnCondition",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "ConditionId",
+        "name": "parentConditionId",
+        "type": "bytes31"
+      },
+      {
+        "indexed": true,
+        "internalType": "EventId",
+        "name": "eventId",
+        "type": "bytes29"
+      },
+      {
+        "indexed": false,
+        "internalType": "address[]",
+        "name": "recipients",
+        "type": "address[]"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "SplitOnEvent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "PositionId",
+        "name": "combinatorialPositionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "PositionId",
+        "name": "underlyingPositionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "Unwrapped",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "PositionId",
+        "name": "underlyingPositionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "PositionId",
+        "name": "combinatorialPositionId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "Wrapped",
+    "type": "event"
+  }
+]
