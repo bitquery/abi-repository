@@ -140,6 +140,40 @@
       "addresses": [
         "0xe0c4ceb92d08ca985bb70fe0a22feb121a9854a8"
       ]
+    },
+    {
+      "name": "IPropAMM venues, Ethereum",
+      "abi": "bound/prop-amm/IPropAMM.json",
+      "chain": 1,
+      "addresses": [
+        "0xf6d5b2fefec7b420d9990b95790adfd3d4c4f977",
+        "0x5979458912f80b96d30d4220af8e2e4925a33320",
+        "0x4367985a63063fc970b009c6e599e9225181f551",
+        "0x20861433d9119b866eeb398cb1ad46652a3cf953",
+        "0x00000003f1ec2379e79f58e12ec6c4f51ee92149",
+        "0x71e790dd841c8a9061487cb3e78c288e75ce0b3d",
+        "0xcf211b4dd0d2be5c173ea57bcf938fc61d1d3bd3",
+        "0xb09aaa8933626d7e4c48d65dad2d77021cfbca9a",
+        "0x6e27bb694393840e253262361b79187d4899e9cf",
+        "0xb8d4e06e3038b07b4376ba3020eabce69f673463"
+      ]
+    },
+    {
+      "name": "IPropAMM venues, Base",
+      "abi": "bound/prop-amm/IPropAMM.json",
+      "chain": 8453,
+      "addresses": [
+        "0x5d2806b9af9e9f740b55eda02a8484af5805803a",
+        "0xe8bf5619df214e711f39e49e24fd5dad552d97f5"
+      ]
+    },
+    {
+      "name": "IPropAMM venues, Robinhood Chain",
+      "abi": "bound/prop-amm/IPropAMM.json",
+      "chain": 4663,
+      "addresses": [
+        "0x5d2806b9af9e9f740b55eda02a8484af5805803a"
+      ]
     }
   ]
 }
