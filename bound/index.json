@@ -174,6 +174,46 @@
       "addresses": [
         "0x5d2806b9af9e9f740b55eda02a8484af5805803a"
       ]
+    },
+    {
+      "name": "Fluid DexV2 implementation (behind proxy 0xabe4d5aa1bb188f4b5d3a1ae3b8ec5e300a78261), Ethereum",
+      "abi": "bound/fluid/FluidDexV2.json",
+      "chain": 1,
+      "addresses": [
+        "0x81f4036b479d3a99c35577f2a090ae13a8115e19"
+      ]
+    },
+    {
+      "name": "Fluid DexV2 D3 swap module, Ethereum",
+      "abi": "bound/fluid/FluidDexV2D3SwapModule.json",
+      "chain": 1,
+      "addresses": [
+        "0x2d0e4fb14b614e4c6b8b3965d848a3f7f0c4fbe3"
+      ]
+    },
+    {
+      "name": "Fluid DexV2 D4 swap module, Ethereum",
+      "abi": "bound/fluid/FluidDexV2D4SwapModule.json",
+      "chain": 1,
+      "addresses": [
+        "0x2cd0a02e4ec14a2328a72d580d29b5007ca98444"
+      ]
+    },
+    {
+      "name": "Fluid DexV2 D3 user module, Ethereum",
+      "abi": "bound/fluid/FluidDexV2D3UserModule.json",
+      "chain": 1,
+      "addresses": [
+        "0x3347a9cbb12d2fa3130425ee4d52e11f8dca301e"
+      ]
+    },
+    {
+      "name": "Fluid DexV2 D4 user module, Ethereum",
+      "abi": "bound/fluid/FluidDexV2D4UserModule.json",
+      "chain": 1,
+      "addresses": [
+        "0x609a72d609614284a1db941b5e2845fc9493dbbb"
+      ]
     }
   ]
 }
