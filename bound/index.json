@@ -2,6 +2,102 @@
   "version": 1,
   "bindings": [
     {
+      "name": "1inch Aqua registry (AquaRouter), Robinhood Chain",
+      "abi": "bound/1inch_aqua/AquaRouter.json",
+      "chain": 4663,
+      "addresses": [
+        "0x1111113ccf1426a8e30e2bff5e005d929bf6a90a"
+      ]
+    },
+    {
+      "name": "1inch AquaSwapVMRouter v1.0.2, Robinhood Chain",
+      "abi": "bound/1inch_aqua/AquaSwapVMRouter.json",
+      "chain": 4663,
+      "addresses": [
+        "0x111111338c5091e8440b67b168bae16a668ac0de"
+      ]
+    },
+    {
+      "name": "1inch Aqua registry (AquaRouter), Ethereum",
+      "abi": "bound/1inch_aqua/AquaRouter.json",
+      "chain": 1,
+      "addresses": [
+        "0x1111113ccf1426a8e30e2bff5e005d929bf6a90a"
+      ]
+    },
+    {
+      "name": "1inch AquaSwapVMRouter v1.0.2, Ethereum",
+      "abi": "bound/1inch_aqua/AquaSwapVMRouter.json",
+      "chain": 1,
+      "addresses": [
+        "0x111111338c5091e8440b67b168bae16a668ac0de"
+      ]
+    },
+    {
+      "name": "1inch Aqua registry (AquaRouter), Optimism",
+      "abi": "bound/1inch_aqua/AquaRouter.json",
+      "chain": 10,
+      "addresses": [
+        "0x1111113ccf1426a8e30e2bff5e005d929bf6a90a"
+      ]
+    },
+    {
+      "name": "1inch AquaSwapVMRouter v1.0.2, Optimism",
+      "abi": "bound/1inch_aqua/AquaSwapVMRouter.json",
+      "chain": 10,
+      "addresses": [
+        "0x111111338c5091e8440b67b168bae16a668ac0de"
+      ]
+    },
+    {
+      "name": "1inch Aqua registry (AquaRouter), Polygon",
+      "abi": "bound/1inch_aqua/AquaRouter.json",
+      "chain": 137,
+      "addresses": [
+        "0x1111113ccf1426a8e30e2bff5e005d929bf6a90a"
+      ]
+    },
+    {
+      "name": "1inch AquaSwapVMRouter v1.0.2, Polygon",
+      "abi": "bound/1inch_aqua/AquaSwapVMRouter.json",
+      "chain": 137,
+      "addresses": [
+        "0x111111338c5091e8440b67b168bae16a668ac0de"
+      ]
+    },
+    {
+      "name": "1inch Aqua registry (AquaRouter), Base",
+      "abi": "bound/1inch_aqua/AquaRouter.json",
+      "chain": 8453,
+      "addresses": [
+        "0x1111113ccf1426a8e30e2bff5e005d929bf6a90a"
+      ]
+    },
+    {
+      "name": "1inch AquaSwapVMRouter v1.0.2, Base",
+      "abi": "bound/1inch_aqua/AquaSwapVMRouter.json",
+      "chain": 8453,
+      "addresses": [
+        "0x111111338c5091e8440b67b168bae16a668ac0de"
+      ]
+    },
+    {
+      "name": "1inch Aqua registry (AquaRouter), Arbitrum",
+      "abi": "bound/1inch_aqua/AquaRouter.json",
+      "chain": 42161,
+      "addresses": [
+        "0x1111113ccf1426a8e30e2bff5e005d929bf6a90a"
+      ]
+    },
+    {
+      "name": "1inch AquaSwapVMRouter v1.0.2, Arbitrum",
+      "abi": "bound/1inch_aqua/AquaSwapVMRouter.json",
+      "chain": 42161,
+      "addresses": [
+        "0x111111338c5091e8440b67b168bae16a668ac0de"
+      ]
+    },
+    {
       "name": "Aero Slipstream CLPool, Base",
       "abi": "bound/aerodrome/CLPool.json",
       "chain": 8453,
