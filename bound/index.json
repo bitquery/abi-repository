@@ -452,6 +452,26 @@
       "addresses": [
         "0x70fe4a44ea505cfa3a57b95cf2862d4fd5f0f687"
       ]
+    },
+    {
+      "name": "up. Slipstream CLPool, the implementation every up. pool is a clone of, Robinhood Chain",
+      "abi": "bound/up/CLPool.json",
+      "chain": 4663,
+      "addresses": [
+        "0x11725976bf1f38c4ab78d1f480bc5883d70d9dc3"
+      ],
+      "factories": [
+        "0x1ac9db4a2608ba45d6127b1737949b51bb54b7f3",
+        "0x12f316b4696165d380d263a3715cb03800c2ae4f"
+      ]
+    },
+    {
+      "name": "up. CLFactory, Robinhood Chain",
+      "abi": "bound/up/CLFactory.json",
+      "chain": 4663,
+      "addresses": [
+        "0x1ac9db4a2608ba45d6127b1737949b51bb54b7f3"
+      ]
     }
   ]
 }
