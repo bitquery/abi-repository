@@ -280,6 +280,15 @@
       ]
     },
     {
+      "name": "Fluid DexV2 proxy, Ethereum",
+      "abi": "bound/fluid/FluidDexV2.json",
+      "chain": 1,
+      "addresses": [
+        "0xabe4d5aa1bb188f4b5d3a1ae3b8ec5e300a78261"
+      ],
+      "from_block": 26284650
+    },
+    {
       "name": "Fluid DexV2 D3 swap module, Ethereum",
       "abi": "bound/fluid/FluidDexV2D3SwapModule.json",
       "chain": 1,
