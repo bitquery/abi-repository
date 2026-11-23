@@ -512,54 +512,6 @@
     "stateMutability": "view"
   },
   {
-    "name": "allowance",
-    "type": "function",
-    "inputs": [
-      {
-        "name": "owner",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "spender",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "name": "approve",
-    "type": "function",
-    "inputs": [
-      {
-        "name": "spender",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "value",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool",
-        "internalType": "bool"
-      }
-    ],
-    "stateMutability": "nonpayable"
-  },
-  {
     "name": "approveForClaim",
     "type": "function",
     "inputs": [
@@ -597,25 +549,6 @@
         "name": "_approved",
         "type": "bool",
         "internalType": "bool"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "name": "balanceOf",
-    "type": "function",
-    "inputs": [
-      {
-        "name": "account",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
       }
     ],
     "stateMutability": "view"
@@ -1412,58 +1345,5 @@
       }
     ],
     "stateMutability": "view"
-  },
-  {
-    "name": "transfer",
-    "type": "function",
-    "inputs": [
-      {
-        "name": "to",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "value",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool",
-        "internalType": "bool"
-      }
-    ],
-    "stateMutability": "nonpayable"
-  },
-  {
-    "name": "transferFrom",
-    "type": "function",
-    "inputs": [
-      {
-        "name": "from",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "to",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "value",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool",
-        "internalType": "bool"
-      }
-    ],
-    "stateMutability": "nonpayable"
   }
 ]
