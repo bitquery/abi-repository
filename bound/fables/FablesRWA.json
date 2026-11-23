@@ -1,0 +1,3544 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "poolManager_",
+        "type": "address",
+        "internalType": "contract IPoolManager"
+      },
+      {
+        "name": "authority_",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "absoluteMaxFee_",
+        "type": "uint24",
+        "internalType": "uint24"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "AccessManagedInvalidAuthority",
+    "type": "error",
+    "inputs": [
+      {
+        "name": "authority",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "name": "AccessManagedRequiredDelay",
+    "type": "error",
+    "inputs": [
+      {
+        "name": "caller",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "delay",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ]
+  },
+  {
+    "name": "AccessManagedUnauthorized",
+    "type": "error",
+    "inputs": [
+      {
+        "name": "caller",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "name": "BallotGateUnset",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "ClaimFeeAboveMax",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "DeadlineExpired",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "DeskBelowMinWeight",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "DeskRetired",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "DistributorNotFFAware",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "DistributorNotFFAware",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "DstModeDisagreesWithClock",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "EmptyPoke",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "FeeAboveCap",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "FeeBelowFloor",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "InsufficientUnstakedShares",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "InvalidBallotGate",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "InvalidClaimFee",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "InvalidClaimFee",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "InvalidDayOverride",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "InvalidFloorConfig",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "InvalidMaxFee",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "InvalidMsgValue",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "InvalidSessionHours",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "InvalidSink",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "InvalidSink",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "InvalidTtl",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "LedgerPaused",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "NativeNotSupported",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "NotAVoterOfThisPool",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "NotDynamicFeePool",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "NotPoolManager",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "NothingToClaim",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "PauseTooLong",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "PoolNotConfigured",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "PremiumExceedsFeeBand",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "PrincipalAboveMax",
+    "type": "error",
+    "inputs": [
+      {
+        "name": "paid",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "max",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "name": "PrincipalBelowMin",
+    "type": "error",
+    "inputs": [
+      {
+        "name": "received",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "min",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "name": "ReentrancyGuardReentrantCall",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "RefundFailed",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "SafeERC20FailedOperation",
+    "type": "error",
+    "inputs": [
+      {
+        "name": "token",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "name": "TooManyDayOverrides",
+    "type": "error",
+    "inputs": [
+      {
+        "name": "marks",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "name": "ZeroAddress",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "ZeroLiquidity",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "ZeroShares",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "Approval",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "spender",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "id",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "AuthorityUpdated",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "authority",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "BallotGateSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "gate",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "ClaimFeeAccrued",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "rangeId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "PoolId"
+      },
+      {
+        "name": "cut0",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "cut1",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "feeBps",
+        "type": "uint16",
+        "indexed": false,
+        "internalType": "uint16"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "ClaimFeeSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "PoolId"
+      },
+      {
+        "name": "bps",
+        "type": "uint16",
+        "indexed": false,
+        "internalType": "uint16"
+      },
+      {
+        "name": "recipient",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "ClaimFeeSwept",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "currency",
+        "type": "address",
+        "indexed": true,
+        "internalType": "Currency"
+      },
+      {
+        "name": "recipient",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "DayOverridesSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "PoolId"
+      },
+      {
+        "name": "yearMonth",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "packed",
+        "type": "uint64",
+        "indexed": false,
+        "internalType": "uint64"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "Deposited",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "rangeId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "liquidity",
+        "type": "uint128",
+        "indexed": false,
+        "internalType": "uint128"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "DistributorSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "distributor",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "DistributorSwept",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "currency",
+        "type": "address",
+        "indexed": true,
+        "internalType": "Currency"
+      },
+      {
+        "name": "distributor",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "DstModeSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "PoolId"
+      },
+      {
+        "name": "mode",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum SessionLib.DstMode"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "EarlyCloseSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "PoolId"
+      },
+      {
+        "name": "y",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "m",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "d",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "closeSec",
+        "type": "uint32",
+        "indexed": false,
+        "internalType": "uint32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "FFFeeSinkSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "sink",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "FeePoked",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "PoolId"
+      },
+      {
+        "name": "fee0For1",
+        "type": "uint24",
+        "indexed": false,
+        "internalType": "uint24"
+      },
+      {
+        "name": "fee1For0",
+        "type": "uint24",
+        "indexed": false,
+        "internalType": "uint24"
+      },
+      {
+        "name": "expiry",
+        "type": "uint40",
+        "indexed": false,
+        "internalType": "uint40"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "FeesClaimed",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "rangeId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "amount0",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "amount1",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "FeesCollected",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "rangeId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "fee0",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "fee1",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "stakedCut0",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "stakedCut1",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "accStaked0X128",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "accStaked1X128",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "feeGrowthInside0X128",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "feeGrowthInside1X128",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "totalShares",
+        "type": "uint128",
+        "indexed": false,
+        "internalType": "uint128"
+      },
+      {
+        "name": "totalStaked",
+        "type": "uint128",
+        "indexed": false,
+        "internalType": "uint128"
+      },
+      {
+        "name": "collectionSeq",
+        "type": "uint64",
+        "indexed": false,
+        "internalType": "uint64"
+      },
+      {
+        "name": "resetSeq",
+        "type": "uint64",
+        "indexed": false,
+        "internalType": "uint64"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "FeesForgone",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "rangeId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "amount0",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "amount1",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "OperatorSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "operator",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "approved",
+        "type": "bool",
+        "indexed": false,
+        "internalType": "bool"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "PausedSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "pausedUntil",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "PokeCleared",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "PoolId"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "PoolAsymmetrySet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "PoolId"
+      },
+      {
+        "name": "premiumPips",
+        "type": "uint24",
+        "indexed": false,
+        "internalType": "uint24"
+      },
+      {
+        "name": "premiumZeroForOne",
+        "type": "bool",
+        "indexed": false,
+        "internalType": "bool"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "PoolConfigured",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "PoolId"
+      },
+      {
+        "name": "config",
+        "type": "tuple",
+        "indexed": false,
+        "components": [
+          {
+            "name": "openFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "overnightFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closedFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "spikeMult",
+            "type": "uint8",
+            "internalType": "uint8"
+          },
+          {
+            "name": "closedSpike",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "descentWindow",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closeBefore",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeAfter",
+            "type": "uint32",
+            "internalType": "uint32"
+          }
+        ],
+        "internalType": "struct SessionLib.FloorConfig"
+      },
+      {
+        "name": "maxFee",
+        "type": "uint24",
+        "indexed": false,
+        "internalType": "uint24"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "PoolPausedSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "PoolId"
+      },
+      {
+        "name": "pausedUntil",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "SessionHoursSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "PoolId"
+      },
+      {
+        "name": "openSec",
+        "type": "uint32",
+        "indexed": false,
+        "internalType": "uint32"
+      },
+      {
+        "name": "closeSec",
+        "type": "uint32",
+        "indexed": false,
+        "internalType": "uint32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "Staked",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "rangeId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "shares",
+        "type": "uint128",
+        "indexed": false,
+        "internalType": "uint128"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "Transfer",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "caller",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "from",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "to",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "id",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "Unstaked",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "rangeId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "shares",
+        "type": "uint128",
+        "indexed": false,
+        "internalType": "uint128"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "Withdrawn",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "rangeId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "liquidity",
+        "type": "uint128",
+        "indexed": false,
+        "internalType": "uint128"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "ABSOLUTE_MAX_FEE",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint24",
+        "internalType": "uint24"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MAX_CLAIM_FEE_BPS",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MAX_CLAIM_FEE_WALK",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MAX_DAY_OVERRIDES",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MAX_DESCENT_WINDOW",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MAX_PAUSE",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MAX_POKE_DISCOUNT_BPS",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MAX_POKE_TTL",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint40",
+        "internalType": "uint40"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MAX_SESSION_LENGTH",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MAX_SESSION_SHIFT",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MAX_SPIKE_MULT",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "uint8"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MIN_EARLY_CLOSE_LENGTH",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MIN_POOL_FEE",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint24",
+        "internalType": "uint24"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MIN_SESSION_LENGTH",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "allowance",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "spender",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "id",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "amount",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "approve",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "spender",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "id",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "authority",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "autonomousFee",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "zeroForOne",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "balanceOf",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "id",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "balance",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "ballotGate",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "claimFeeAllTimeMin",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "claimFeeBps",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "claimFeeChangeAt",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "index",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "fromTs",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "bps",
+            "type": "uint16",
+            "internalType": "uint16"
+          }
+        ],
+        "internalType": "struct ClaimFeeChange"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "claimFeeFor",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "sinceIndex",
+        "type": "uint64",
+        "internalType": "uint64"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "claimFeeHistoryLength",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "claimFeeOwed",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "currency",
+        "type": "address",
+        "internalType": "Currency"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "owed",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "claimFeeRecipient",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "claimFeeSyncIndex",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "rangeId",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "index",
+        "type": "uint64",
+        "internalType": "uint64"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "claimFees",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "currency0",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "currency1",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "fee",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "tickSpacing",
+            "type": "int24",
+            "internalType": "int24"
+          },
+          {
+            "name": "hooks",
+            "type": "address",
+            "internalType": "contract IHooks"
+          }
+        ],
+        "internalType": "struct PoolKey"
+      },
+      {
+        "name": "tickLower",
+        "type": "int24",
+        "internalType": "int24"
+      },
+      {
+        "name": "tickUpper",
+        "type": "int24",
+        "internalType": "int24"
+      },
+      {
+        "name": "to",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "maxFeeBps",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "clearPoke",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "closeSec",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "currentFee",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "zeroForOne",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint24",
+        "internalType": "uint24"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "dayOverride",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "y",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "m",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "d",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "enum MarketCalendar.DayOverride"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "deposit",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "currency0",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "currency1",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "fee",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "tickSpacing",
+            "type": "int24",
+            "internalType": "int24"
+          },
+          {
+            "name": "hooks",
+            "type": "address",
+            "internalType": "contract IHooks"
+          }
+        ],
+        "internalType": "struct PoolKey"
+      },
+      {
+        "name": "tickLower",
+        "type": "int24",
+        "internalType": "int24"
+      },
+      {
+        "name": "tickUpper",
+        "type": "int24",
+        "internalType": "int24"
+      },
+      {
+        "name": "liquidity",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "amount0Max",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "amount1Max",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "deadline",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "payable"
+  },
+  {
+    "name": "distributor",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "distributorFF",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "distributorOwed",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "currency",
+        "type": "address",
+        "internalType": "Currency"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "owed",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "dstMode",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "enum SessionLib.DstMode"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "earlyClose",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "y",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "m",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "d",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "effectiveClaimFee",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "feeFloorAt",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "cfg",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "openFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "overnightFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closedFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "spikeMult",
+            "type": "uint8",
+            "internalType": "uint8"
+          },
+          {
+            "name": "closedSpike",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "descentWindow",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closeBefore",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeAfter",
+            "type": "uint32",
+            "internalType": "uint32"
+          }
+        ],
+        "internalType": "struct SessionLib.FloorConfig"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "ffFeeSink",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "floorConfig",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "openFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "overnightFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closedFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "spikeMult",
+            "type": "uint8",
+            "internalType": "uint8"
+          },
+          {
+            "name": "closedSpike",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "descentWindow",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closeBefore",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeAfter",
+            "type": "uint32",
+            "internalType": "uint32"
+          }
+        ],
+        "internalType": "struct SessionLib.FloorConfig"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "isConsumingScheduledOp",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes4",
+        "internalType": "bytes4"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "isOperator",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "operator",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "isOperator",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "isSettling",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "maxFee",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "cap",
+        "type": "uint24",
+        "internalType": "uint24"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "openSec",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "pause",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "duration",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "pausePool",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "currency0",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "currency1",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "fee",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "tickSpacing",
+            "type": "int24",
+            "internalType": "int24"
+          },
+          {
+            "name": "hooks",
+            "type": "address",
+            "internalType": "contract IHooks"
+          }
+        ],
+        "internalType": "struct PoolKey"
+      },
+      {
+        "name": "duration",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "paused",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "pausedFor",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "pausedUntil",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "pausedUntilOf",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "until",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "pokeFee",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "fee0For1",
+        "type": "uint24",
+        "internalType": "uint24"
+      },
+      {
+        "name": "fee1For0",
+        "type": "uint24",
+        "internalType": "uint24"
+      },
+      {
+        "name": "ttl",
+        "type": "uint40",
+        "internalType": "uint40"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "pokeFloor",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint24",
+        "internalType": "uint24"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "pokeOf",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "fee0For1",
+        "type": "uint24",
+        "internalType": "uint24"
+      },
+      {
+        "name": "fee1For0",
+        "type": "uint24",
+        "internalType": "uint24"
+      },
+      {
+        "name": "expiry",
+        "type": "uint40",
+        "internalType": "uint40"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "poolAsymmetry",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "premiumPips",
+        "type": "uint24",
+        "internalType": "uint24"
+      },
+      {
+        "name": "premiumZeroForOne",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "poolManager",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract IPoolManager"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "rangeGrowth",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "growth0",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "growth1",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "rangeId",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "tickLower",
+        "type": "int24",
+        "internalType": "int24"
+      },
+      {
+        "name": "tickUpper",
+        "type": "int24",
+        "internalType": "int24"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "pure"
+  },
+  {
+    "name": "rangeKey",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "key",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "currency0",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "currency1",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "fee",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "tickSpacing",
+            "type": "int24",
+            "internalType": "int24"
+          },
+          {
+            "name": "hooks",
+            "type": "address",
+            "internalType": "contract IHooks"
+          }
+        ],
+        "internalType": "struct PoolKey"
+      },
+      {
+        "name": "tickLower",
+        "type": "int24",
+        "internalType": "int24"
+      },
+      {
+        "name": "tickUpper",
+        "type": "int24",
+        "internalType": "int24"
+      },
+      {
+        "name": "set",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "rangeState",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "totalShares",
+            "type": "uint128",
+            "internalType": "uint128"
+          },
+          {
+            "name": "totalStaked",
+            "type": "uint128",
+            "internalType": "uint128"
+          },
+          {
+            "name": "accFee0X128",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "accFee1X128",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "accStaked0X128",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "accStaked1X128",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "stakedResidual0",
+            "type": "uint128",
+            "internalType": "uint128"
+          },
+          {
+            "name": "stakedResidual1",
+            "type": "uint128",
+            "internalType": "uint128"
+          },
+          {
+            "name": "collectionSeq",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "resetSeq",
+            "type": "uint64",
+            "internalType": "uint64"
+          }
+        ],
+        "internalType": "struct RangeState"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "sessionAt",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "enum SessionLib.Session"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "setAuthority",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "newAuthority",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setBallotGate",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "gate",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setClaimFee",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "currency0",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "currency1",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "fee",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "tickSpacing",
+            "type": "int24",
+            "internalType": "int24"
+          },
+          {
+            "name": "hooks",
+            "type": "address",
+            "internalType": "contract IHooks"
+          }
+        ],
+        "internalType": "struct PoolKey"
+      },
+      {
+        "name": "settleFirst",
+        "type": "address[]",
+        "internalType": "Currency[]"
+      },
+      {
+        "name": "bps",
+        "type": "uint16",
+        "internalType": "uint16"
+      },
+      {
+        "name": "recipient",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setClaimFeeBps",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "currency0",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "currency1",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "fee",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "tickSpacing",
+            "type": "int24",
+            "internalType": "int24"
+          },
+          {
+            "name": "hooks",
+            "type": "address",
+            "internalType": "contract IHooks"
+          }
+        ],
+        "internalType": "struct PoolKey"
+      },
+      {
+        "name": "bps",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setDayOverrides",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "yearMonth",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "packed",
+        "type": "uint64",
+        "internalType": "uint64"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setDistributor",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "settleFirst",
+        "type": "address[]",
+        "internalType": "Currency[]"
+      },
+      {
+        "name": "distributor_",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setDstMode",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "mode",
+        "type": "uint8",
+        "internalType": "enum SessionLib.DstMode"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setEarlyClose",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "y",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "m",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "d",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "closeSec_",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setFFFeeSink",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "settleFirst",
+        "type": "address[]",
+        "internalType": "Currency[]"
+      },
+      {
+        "name": "sink",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setOperator",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "operator",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "approved",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setPaused",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "duration",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setPoolAsymmetry",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "currency0",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "currency1",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "fee",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "tickSpacing",
+            "type": "int24",
+            "internalType": "int24"
+          },
+          {
+            "name": "hooks",
+            "type": "address",
+            "internalType": "contract IHooks"
+          }
+        ],
+        "internalType": "struct PoolKey"
+      },
+      {
+        "name": "premiumPips",
+        "type": "uint24",
+        "internalType": "uint24"
+      },
+      {
+        "name": "premiumZeroForOne",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setPoolConfig",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "currency0",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "currency1",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "fee",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "tickSpacing",
+            "type": "int24",
+            "internalType": "int24"
+          },
+          {
+            "name": "hooks",
+            "type": "address",
+            "internalType": "contract IHooks"
+          }
+        ],
+        "internalType": "struct PoolKey"
+      },
+      {
+        "name": "config",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "openFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "overnightFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closedFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "spikeMult",
+            "type": "uint8",
+            "internalType": "uint8"
+          },
+          {
+            "name": "closedSpike",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "descentWindow",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closeBefore",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeAfter",
+            "type": "uint32",
+            "internalType": "uint32"
+          }
+        ],
+        "internalType": "struct SessionLib.FloorConfig"
+      },
+      {
+        "name": "cap",
+        "type": "uint24",
+        "internalType": "uint24"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setPoolPaused",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "currency0",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "currency1",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "fee",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "tickSpacing",
+            "type": "int24",
+            "internalType": "int24"
+          },
+          {
+            "name": "hooks",
+            "type": "address",
+            "internalType": "contract IHooks"
+          }
+        ],
+        "internalType": "struct PoolKey"
+      },
+      {
+        "name": "duration",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setSessionHours",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "openSec_",
+        "type": "uint32",
+        "internalType": "uint32"
+      },
+      {
+        "name": "closeSec_",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "stake",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "currency0",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "currency1",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "fee",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "tickSpacing",
+            "type": "int24",
+            "internalType": "int24"
+          },
+          {
+            "name": "hooks",
+            "type": "address",
+            "internalType": "contract IHooks"
+          }
+        ],
+        "internalType": "struct PoolKey"
+      },
+      {
+        "name": "tickLower",
+        "type": "int24",
+        "internalType": "int24"
+      },
+      {
+        "name": "tickUpper",
+        "type": "int24",
+        "internalType": "int24"
+      },
+      {
+        "name": "shares",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "minGaugeWeight",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "supportsInterface",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "interfaceId",
+        "type": "bytes4",
+        "internalType": "bytes4"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "sweepClaimFee",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "currency",
+        "type": "address",
+        "internalType": "Currency"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "sweepDistributor",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "currency",
+        "type": "address",
+        "internalType": "Currency"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "syncRanges",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "tokenId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "ids",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "transfer",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "receiver",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "id",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "transferFrom",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "sender",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "receiver",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "id",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "unstake",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "currency0",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "currency1",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "fee",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "tickSpacing",
+            "type": "int24",
+            "internalType": "int24"
+          },
+          {
+            "name": "hooks",
+            "type": "address",
+            "internalType": "contract IHooks"
+          }
+        ],
+        "internalType": "struct PoolKey"
+      },
+      {
+        "name": "tickLower",
+        "type": "int24",
+        "internalType": "int24"
+      },
+      {
+        "name": "tickUpper",
+        "type": "int24",
+        "internalType": "int24"
+      },
+      {
+        "name": "shares",
+        "type": "uint128",
+        "internalType": "uint128"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "userPosition",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "owner",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "staked",
+            "type": "uint128",
+            "internalType": "uint128"
+          },
+          {
+            "name": "owed0",
+            "type": "uint128",
+            "internalType": "uint128"
+          },
+          {
+            "name": "owed1",
+            "type": "uint128",
+            "internalType": "uint128"
+          },
+          {
+            "name": "checkpoint0X128",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "checkpoint1X128",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "stakedCheckpoint0X128",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "stakedCheckpoint1X128",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "forgone0",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "forgone1",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ],
+        "internalType": "struct UserPosition"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "withdraw",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "currency0",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "currency1",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "fee",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "tickSpacing",
+            "type": "int24",
+            "internalType": "int24"
+          },
+          {
+            "name": "hooks",
+            "type": "address",
+            "internalType": "contract IHooks"
+          }
+        ],
+        "internalType": "struct PoolKey"
+      },
+      {
+        "name": "tickLower",
+        "type": "int24",
+        "internalType": "int24"
+      },
+      {
+        "name": "tickUpper",
+        "type": "int24",
+        "internalType": "int24"
+      },
+      {
+        "name": "liquidity",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "to",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "amount0Min",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "amount1Min",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "deadline",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "withdrawAndClaim",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "key",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "currency0",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "currency1",
+            "type": "address",
+            "internalType": "Currency"
+          },
+          {
+            "name": "fee",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "tickSpacing",
+            "type": "int24",
+            "internalType": "int24"
+          },
+          {
+            "name": "hooks",
+            "type": "address",
+            "internalType": "contract IHooks"
+          }
+        ],
+        "internalType": "struct PoolKey"
+      },
+      {
+        "name": "tickLower",
+        "type": "int24",
+        "internalType": "int24"
+      },
+      {
+        "name": "tickUpper",
+        "type": "int24",
+        "internalType": "int24"
+      },
+      {
+        "name": "liquidity",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "to",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "amount0Min",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "amount1Min",
+        "type": "uint128",
+        "internalType": "uint128"
+      },
+      {
+        "name": "deadline",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "maxFeeBps",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  }
+]

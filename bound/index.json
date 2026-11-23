@@ -312,6 +312,222 @@
       ]
     },
     {
+      "name": "Curve StableswapNG factory, Ethereum",
+      "abi": "bound/curve/StableswapNGFactory.json",
+      "chain": 1,
+      "addresses": [
+        "0x6a8cbed756804b16e05e741edabd5cb544ae21bf"
+      ]
+    },
+    {
+      "name": "Curve Twocrypto-NG factory, Ethereum",
+      "abi": "bound/curve/TwocryptoNGFactory.json",
+      "chain": 1,
+      "addresses": [
+        "0x98ee851a00abee0d95d08cf4ca2bdce32aeaaf7f"
+      ]
+    },
+    {
+      "name": "Curve Tricrypto-NG factory, Ethereum",
+      "abi": "bound/curve/TricryptoNGFactory.json",
+      "chain": 1,
+      "addresses": [
+        "0x0c0e5f2ff0ff18a3be9b835635039256dc4b4963"
+      ]
+    },
+    {
+      "name": "ElfomoFi, Base",
+      "abi": "bound/elfomofi/ElfomoFi.json",
+      "chain": 8453,
+      "addresses": [
+        "0xf0f0f0f0fb0d738452efd03a28e8be14c76d5f73"
+      ]
+    },
+    {
+      "name": "Fables pool registry (FablesPoolRegistry), Robinhood Chain",
+      "abi": "bound/fables/FablesPoolRegistry.json",
+      "chain": 4663,
+      "addresses": [
+        "0x159a113e012593d9b3cc63ad45e30f0467e13ef3"
+      ]
+    },
+    {
+      "name": "Fables RWA hook, deployed at block 54551909, Robinhood Chain",
+      "abi": "bound/fables/FablesRWA.json",
+      "chain": 4663,
+      "addresses": [
+        "0x5eb87f69be00df39981622fd60a8de4b7837e080"
+      ]
+    },
+    {
+      "name": "Fables RWA ETH hook, deployed at block 54551973, Robinhood Chain",
+      "abi": "bound/fables/FablesRWAETH.json",
+      "chain": 4663,
+      "addresses": [
+        "0xca89f079af00f752bfd3c345358dc38d4d73e080"
+      ]
+    },
+    {
+      "name": "Fables Ramp hook, deployed at block 54551942, Robinhood Chain",
+      "abi": "bound/fables/FablesRamp.json",
+      "chain": 4663,
+      "addresses": [
+        "0x08e52564bad99e05a694b4809f397edca417a080"
+      ]
+    },
+    {
+      "name": "Fables Ramp ETH hook, deployed at block 54552000, Robinhood Chain",
+      "abi": "bound/fables/FablesRampETH.json",
+      "chain": 4663,
+      "addresses": [
+        "0x594e8e6281edf2d363a0293a50004cf868e7a080"
+      ]
+    },
+    {
+      "name": "Fables RWA hooks, first generation (blocks 37254394-37254418), Robinhood Chain",
+      "abi": "bound/fables/FablesRWA.gen1.json",
+      "chain": 4663,
+      "addresses": [
+        "0x66622f77b797d506e5376f7798b67ab288966080",
+        "0xa0e8fbff13e24af2b5e61a72800e08a161bde080"
+      ]
+    },
+    {
+      "name": "Fables RWA hooks, second generation (blocks 41250366-41250408), Robinhood Chain",
+      "abi": "bound/fables/FablesRWA.gen2.json",
+      "chain": 4663,
+      "addresses": [
+        "0x79576fbad6e83915630bbb5d5658483f05532080",
+        "0x70a9a88402989226847ec122043ce5e7ff462080",
+        "0x67d86050d22d574df046f3d90f722045f714e080"
+      ]
+    },
+    {
+      "name": "Fables Ramp ETH hook, second generation (block 41250427), Robinhood Chain",
+      "abi": "bound/fables/FablesRampETH.gen2.json",
+      "chain": 4663,
+      "addresses": [
+        "0x06a889870c8f83640d6816319f72e2aa579b6080"
+      ]
+    },
+    {
+      "name": "Fables RWA hooks, third generation (blocks 44862405-44862450), Robinhood Chain",
+      "abi": "bound/fables/FablesRWA.gen3.json",
+      "chain": 4663,
+      "addresses": [
+        "0xb608a78761f179f7c56f15e7d13921b92f00a080",
+        "0xa4570c37590e45f0b06898123d4de16307a32080",
+        "0x8af95932ec4484fb10c641a4cbcf19a798cb2080"
+      ]
+    },
+    {
+      "name": "Solidly V3 factory, Ethereum",
+      "abi": "bound/solidly_v3/SolidlyV3Factory.json",
+      "chain": 1,
+      "addresses": [
+        "0x70fe4a44ea505cfa3a57b95cf2862d4fd5f0f687",
+        "0x735bb16affe83a3dc4dc418abccf179617cf9ff2"
+      ]
+    },
+    {
+      "name": "Solidly V3 factory, Optimism",
+      "abi": "bound/solidly_v3/SolidlyV3Factory.json",
+      "chain": 10,
+      "addresses": [
+        "0x70fe4a44ea505cfa3a57b95cf2862d4fd5f0f687"
+      ]
+    },
+    {
+      "name": "Solidly V3 factory, Base",
+      "abi": "bound/solidly_v3/SolidlyV3Factory.json",
+      "chain": 8453,
+      "addresses": [
+        "0x70fe4a44ea505cfa3a57b95cf2862d4fd5f0f687"
+      ]
+    },
+    {
+      "name": "Solidly V3 factory, Arbitrum",
+      "abi": "bound/solidly_v3/SolidlyV3Factory.json",
+      "chain": 42161,
+      "addresses": [
+        "0x70fe4a44ea505cfa3a57b95cf2862d4fd5f0f687"
+      ]
+    },
+    {
+      "name": "up. Slipstream CLPool, the implementation every up. pool is a clone of, Robinhood Chain",
+      "abi": "bound/up/CLPool.json",
+      "chain": 4663,
+      "addresses": [
+        "0x11725976bf1f38c4ab78d1f480bc5883d70d9dc3"
+      ],
+      "factories": [
+        "0x1ac9db4a2608ba45d6127b1737949b51bb54b7f3",
+        "0x12f316b4696165d380d263a3715cb03800c2ae4f"
+      ]
+    },
+    {
+      "name": "up. CLFactory, Robinhood Chain",
+      "abi": "bound/up/CLFactory.json",
+      "chain": 4663,
+      "addresses": [
+        "0x1ac9db4a2608ba45d6127b1737949b51bb54b7f3"
+      ]
+    },
+    {
+      "name": "Aero Basic VolatilePool, the implementation every volatile pool is a clone of, Base",
+      "abi": "bound/aerodrome/VolatilePool.json",
+      "chain": 8453,
+      "addresses": [
+        "0x0526cf035c1156b5c598b0d3c2445e38af2e8bde"
+      ],
+      "factories": [
+        "0x8e6a9fcd1d638cc760ffba397605fe3355de76d2"
+      ]
+    },
+    {
+      "name": "Aero Basic StablePool, the implementation every stable pool is a clone of, Base",
+      "abi": "bound/aerodrome/StablePool.json",
+      "chain": 8453,
+      "addresses": [
+        "0xf525988f88b7d8b64631d86070fec5bfdc50c174"
+      ],
+      "factories": [
+        "0x78589e876edcebdce72ee3436ab3c9ad3a7cef2d"
+      ]
+    },
+    {
+      "name": "Aero Basic VolatilePoolFactory, Base",
+      "abi": "bound/aerodrome/VolatilePoolFactory.json",
+      "chain": 8453,
+      "addresses": [
+        "0x8e6a9fcd1d638cc760ffba397605fe3355de76d2"
+      ]
+    },
+    {
+      "name": "Aero Basic StablePoolFactory, Base",
+      "abi": "bound/aerodrome/StablePoolFactory.json",
+      "chain": 8453,
+      "addresses": [
+        "0x78589e876edcebdce72ee3436ab3c9ad3a7cef2d"
+      ]
+    },
+    {
+      "name": "LunarBase BNB/USDT pool (proxy), BNB Smart Chain",
+      "abi": "bound/lunarbase/Pool.json",
+      "chain": 56,
+      "addresses": [
+        "0x00007904d186680c709519e71f4dc3e2df8f1b99"
+      ]
+    },
+    {
+      "name": "LunarBase ETH/USDC pool (proxy), Base",
+      "abi": "bound/lunarbase/Pool.json",
+      "chain": 8453,
+      "addresses": [
+        "0x0000efc4ec03a7c47d3a38a9be7ff1d52dd01b99"
+      ]
+    },
+    {
       "name": "Arcus Spot settlement (ArcusSettlement), proxy and implementation, Robinhood Chain",
       "abi": "bound/arcus/ArcusSettlement.json",
       "chain": 4663,
