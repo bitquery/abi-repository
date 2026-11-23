@@ -526,6 +526,33 @@
       "addresses": [
         "0x0000efc4ec03a7c47d3a38a9be7ff1d52dd01b99"
       ]
+    },
+    {
+      "name": "Arcus Spot settlement (ArcusSettlement), proxy and implementation, Robinhood Chain",
+      "abi": "bound/arcus/ArcusSettlement.json",
+      "chain": 4663,
+      "addresses": [
+        "0x006102b16a04c20306a28b652745d3973d7d24fa",
+        "0xdfe851005a37107209d30f9b124467807f3aa86f"
+      ]
+    },
+    {
+      "name": "Arcus Spot RFQ executor (RfqExecutor), proxy and implementation, Robinhood Chain",
+      "abi": "bound/arcus/RfqExecutor.json",
+      "chain": 4663,
+      "addresses": [
+        "0x73318e03ba5293ae754d377868f60949e0a7475a",
+        "0xf92f6e943476fc5c318c9a0e2fe80af963a56116"
+      ]
+    },
+    {
+      "name": "Arcus Spot wrapped-token factory (WrappedTokenFactory), proxy and implementation, Robinhood Chain",
+      "abi": "bound/arcus/WrappedTokenFactory.json",
+      "chain": 4663,
+      "addresses": [
+        "0x8bc71ae8eac8b25f30c2990930cc3a80e72e169e",
+        "0xd3fd212d087e084b748ff4d00d936a9f1e8936a9"
+      ]
     }
   ]
 }
