@@ -2805,5 +2805,24 @@
     ],
     "outputs": [],
     "stateMutability": "nonpayable"
+  },
+  {
+    "name": "unlockCallback",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "rawData",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
+    ],
+    "stateMutability": "nonpayable"
   }
 ]
