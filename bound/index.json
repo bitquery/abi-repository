@@ -1,0 +1,335 @@
+{
+  "version": 1,
+  "bindings": [
+    {
+      "name": "1inch Aqua registry (AquaRouter), Robinhood Chain",
+      "abi": "bound/1inch_aqua/AquaRouter.json",
+      "chain": 4663,
+      "addresses": [
+        "0x1111113ccf1426a8e30e2bff5e005d929bf6a90a"
+      ]
+    },
+    {
+      "name": "1inch AquaSwapVMRouter v1.0.2, Robinhood Chain",
+      "abi": "bound/1inch_aqua/AquaSwapVMRouter.json",
+      "chain": 4663,
+      "addresses": [
+        "0x111111338c5091e8440b67b168bae16a668ac0de"
+      ]
+    },
+    {
+      "name": "1inch Aqua registry (AquaRouter), Ethereum",
+      "abi": "bound/1inch_aqua/AquaRouter.json",
+      "chain": 1,
+      "addresses": [
+        "0x1111113ccf1426a8e30e2bff5e005d929bf6a90a"
+      ]
+    },
+    {
+      "name": "1inch AquaSwapVMRouter v1.0.2, Ethereum",
+      "abi": "bound/1inch_aqua/AquaSwapVMRouter.json",
+      "chain": 1,
+      "addresses": [
+        "0x111111338c5091e8440b67b168bae16a668ac0de"
+      ]
+    },
+    {
+      "name": "1inch Aqua registry (AquaRouter), Optimism",
+      "abi": "bound/1inch_aqua/AquaRouter.json",
+      "chain": 10,
+      "addresses": [
+        "0x1111113ccf1426a8e30e2bff5e005d929bf6a90a"
+      ]
+    },
+    {
+      "name": "1inch AquaSwapVMRouter v1.0.2, Optimism",
+      "abi": "bound/1inch_aqua/AquaSwapVMRouter.json",
+      "chain": 10,
+      "addresses": [
+        "0x111111338c5091e8440b67b168bae16a668ac0de"
+      ]
+    },
+    {
+      "name": "1inch Aqua registry (AquaRouter), Polygon",
+      "abi": "bound/1inch_aqua/AquaRouter.json",
+      "chain": 137,
+      "addresses": [
+        "0x1111113ccf1426a8e30e2bff5e005d929bf6a90a"
+      ]
+    },
+    {
+      "name": "1inch AquaSwapVMRouter v1.0.2, Polygon",
+      "abi": "bound/1inch_aqua/AquaSwapVMRouter.json",
+      "chain": 137,
+      "addresses": [
+        "0x111111338c5091e8440b67b168bae16a668ac0de"
+      ]
+    },
+    {
+      "name": "1inch Aqua registry (AquaRouter), Base",
+      "abi": "bound/1inch_aqua/AquaRouter.json",
+      "chain": 8453,
+      "addresses": [
+        "0x1111113ccf1426a8e30e2bff5e005d929bf6a90a"
+      ]
+    },
+    {
+      "name": "1inch AquaSwapVMRouter v1.0.2, Base",
+      "abi": "bound/1inch_aqua/AquaSwapVMRouter.json",
+      "chain": 8453,
+      "addresses": [
+        "0x111111338c5091e8440b67b168bae16a668ac0de"
+      ]
+    },
+    {
+      "name": "1inch Aqua registry (AquaRouter), Arbitrum",
+      "abi": "bound/1inch_aqua/AquaRouter.json",
+      "chain": 42161,
+      "addresses": [
+        "0x1111113ccf1426a8e30e2bff5e005d929bf6a90a"
+      ]
+    },
+    {
+      "name": "1inch AquaSwapVMRouter v1.0.2, Arbitrum",
+      "abi": "bound/1inch_aqua/AquaSwapVMRouter.json",
+      "chain": 42161,
+      "addresses": [
+        "0x111111338c5091e8440b67b168bae16a668ac0de"
+      ]
+    },
+    {
+      "name": "Aero Slipstream CLPool, Base",
+      "abi": "bound/aerodrome/CLPool.json",
+      "chain": 8453,
+      "addresses": [
+        "0x1642634c8cb1c9f1b84c9a1a08534f8c3f4e89f8"
+      ],
+      "factories": [
+        "0x9cb220581b91b0c83223012fe69688b92ad07a76",
+        "0xc6bde6e9f0cd71013e5fcf2daae2fa1c71bb2f25"
+      ]
+    },
+    {
+      "name": "Aero Slipstream CLFactory, Base",
+      "abi": "aerodrome/CLFactory.abi",
+      "chain": 8453,
+      "addresses": [
+        "0x9cb220581b91b0c83223012fe69688b92ad07a76",
+        "0xc6bde6e9f0cd71013e5fcf2daae2fa1c71bb2f25"
+      ]
+    },
+    {
+      "name": "Aero Slipstream CLPool, Optimism",
+      "abi": "bound/aerodrome/CLPool.json",
+      "chain": 10,
+      "addresses": [
+        "0x1642634c8cb1c9f1b84c9a1a08534f8c3f4e89f8",
+        "0x0df9fc8730eec048e9832b31b4bff4351158e19b"
+      ],
+      "factories": [
+        "0xfeab42d90055db3a0616249f76b6002d72266778",
+        "0xf3384180f1f99ff4448e836b7773e7b7a2d1fa3b"
+      ]
+    },
+    {
+      "name": "Aero Slipstream CLFactory, Optimism",
+      "abi": "aerodrome/CLFactory.abi",
+      "chain": 10,
+      "addresses": [
+        "0xfeab42d90055db3a0616249f76b6002d72266778",
+        "0xf3384180f1f99ff4448e836b7773e7b7a2d1fa3b"
+      ]
+    },
+    {
+      "name": "Aero Slipstream CLPool, Ethereum",
+      "abi": "bound/aerodrome/CLPool.json",
+      "chain": 1,
+      "addresses": [
+        "0x1642634c8cb1c9f1b84c9a1a08534f8c3f4e89f8"
+      ],
+      "factories": [
+        "0xf4fd2e6c5b60c5b365cd1b96dd6245e6d60414c2",
+        "0xabd524b6f8daae68314ad2fd7698cb65b4f8d398"
+      ]
+    },
+    {
+      "name": "Aero Slipstream CLFactory, Ethereum",
+      "abi": "aerodrome/CLFactory.abi",
+      "chain": 1,
+      "addresses": [
+        "0xf4fd2e6c5b60c5b365cd1b96dd6245e6d60414c2",
+        "0xabd524b6f8daae68314ad2fd7698cb65b4f8d398"
+      ]
+    },
+    {
+      "name": "Aero Slipstream CLPool, Arbitrum",
+      "abi": "bound/aerodrome/CLPool.json",
+      "chain": 42161,
+      "addresses": [
+        "0x1642634c8cb1c9f1b84c9a1a08534f8c3f4e89f8"
+      ],
+      "factories": [
+        "0x88a60ee77392577c355c0acb2a8d476d5a4ec03a",
+        "0x2f1ea2c2def80fca460c0dcf205c281a8116834b"
+      ]
+    },
+    {
+      "name": "Aero Slipstream CLFactory, Arbitrum",
+      "abi": "aerodrome/CLFactory.abi",
+      "chain": 42161,
+      "addresses": [
+        "0x88a60ee77392577c355c0acb2a8d476d5a4ec03a",
+        "0x2f1ea2c2def80fca460c0dcf205c281a8116834b"
+      ]
+    },
+    {
+      "name": "Aero Slipstream CLPool, Robinhood Chain",
+      "abi": "bound/aerodrome/CLPool.json",
+      "chain": 4663,
+      "addresses": [
+        "0x1642634c8cb1c9f1b84c9a1a08534f8c3f4e89f8"
+      ],
+      "factories": [
+        "0xabd524b6f8daae68314ad2fd7698cb65b4f8d398",
+        "0xc63d7338c178e805c544b8f897066bd3bbcbe136"
+      ]
+    },
+    {
+      "name": "Aero Slipstream CLFactory, Robinhood Chain",
+      "abi": "aerodrome/CLFactory.abi",
+      "chain": 4663,
+      "addresses": [
+        "0xabd524b6f8daae68314ad2fd7698cb65b4f8d398",
+        "0xc63d7338c178e805c544b8f897066bd3bbcbe136"
+      ]
+    },
+    {
+      "name": "Aero Slipstream CLPool, Arc",
+      "abi": "bound/aerodrome/CLPool.json",
+      "chain": 5042,
+      "factories": [
+        "0x7f83235643181e440433400a027618cd50879751",
+        "0xb89df768af2cfe637ceb352c587fe8edaf491d03"
+      ]
+    },
+    {
+      "name": "Aero Slipstream CLFactory, Arc",
+      "abi": "aerodrome/CLFactory.abi",
+      "chain": 5042,
+      "addresses": [
+        "0x7f83235643181e440433400a027618cd50879751",
+        "0xb89df768af2cfe637ceb352c587fe8edaf491d03"
+      ]
+    },
+    {
+      "name": "Ramses V3 pool (Ramses CL V2), Robinhood Chain",
+      "abi": "bound/ramses/RamsesV3Pool.json",
+      "chain": 4663,
+      "factories": [
+        "0xe0c4ceb92d08ca985bb70fe0a22feb121a9854a8"
+      ]
+    },
+    {
+      "name": "Ramses V3 factory (Ramses CL V2), Robinhood Chain",
+      "abi": "ramses/RamsesV3Factory.abi",
+      "chain": 4663,
+      "addresses": [
+        "0xe0c4ceb92d08ca985bb70fe0a22feb121a9854a8"
+      ]
+    },
+    {
+      "name": "IPropAMM venues, Ethereum",
+      "abi": "bound/prop-amm/IPropAMM.json",
+      "chain": 1,
+      "addresses": [
+        "0xf6d5b2fefec7b420d9990b95790adfd3d4c4f977",
+        "0x5979458912f80b96d30d4220af8e2e4925a33320",
+        "0x4367985a63063fc970b009c6e599e9225181f551",
+        "0x20861433d9119b866eeb398cb1ad46652a3cf953",
+        "0x00000003f1ec2379e79f58e12ec6c4f51ee92149",
+        "0x71e790dd841c8a9061487cb3e78c288e75ce0b3d",
+        "0xcf211b4dd0d2be5c173ea57bcf938fc61d1d3bd3",
+        "0xb09aaa8933626d7e4c48d65dad2d77021cfbca9a",
+        "0x6e27bb694393840e253262361b79187d4899e9cf",
+        "0xb8d4e06e3038b07b4376ba3020eabce69f673463"
+      ]
+    },
+    {
+      "name": "IPropAMM venues, Base",
+      "abi": "bound/prop-amm/IPropAMM.json",
+      "chain": 8453,
+      "addresses": [
+        "0x5d2806b9af9e9f740b55eda02a8484af5805803a",
+        "0xe8bf5619df214e711f39e49e24fd5dad552d97f5"
+      ]
+    },
+    {
+      "name": "IPropAMM venues, Robinhood Chain",
+      "abi": "bound/prop-amm/IPropAMM.json",
+      "chain": 4663,
+      "addresses": [
+        "0x5d2806b9af9e9f740b55eda02a8484af5805803a"
+      ]
+    },
+    {
+      "name": "Fluid DexV2 implementation (behind proxy 0xabe4d5aa1bb188f4b5d3a1ae3b8ec5e300a78261), Ethereum",
+      "abi": "bound/fluid/FluidDexV2.json",
+      "chain": 1,
+      "addresses": [
+        "0x81f4036b479d3a99c35577f2a090ae13a8115e19"
+      ]
+    },
+    {
+      "name": "Fluid DexV2 D3 swap module, Ethereum",
+      "abi": "bound/fluid/FluidDexV2D3SwapModule.json",
+      "chain": 1,
+      "addresses": [
+        "0x2d0e4fb14b614e4c6b8b3965d848a3f7f0c4fbe3"
+      ]
+    },
+    {
+      "name": "Fluid DexV2 D4 swap module, Ethereum",
+      "abi": "bound/fluid/FluidDexV2D4SwapModule.json",
+      "chain": 1,
+      "addresses": [
+        "0x2cd0a02e4ec14a2328a72d580d29b5007ca98444"
+      ]
+    },
+    {
+      "name": "Fluid DexV2 D3 user module, Ethereum",
+      "abi": "bound/fluid/FluidDexV2D3UserModule.json",
+      "chain": 1,
+      "addresses": [
+        "0x3347a9cbb12d2fa3130425ee4d52e11f8dca301e"
+      ]
+    },
+    {
+      "name": "Fluid DexV2 D4 user module, Ethereum",
+      "abi": "bound/fluid/FluidDexV2D4UserModule.json",
+      "chain": 1,
+      "addresses": [
+        "0x609a72d609614284a1db941b5e2845fc9493dbbb"
+      ]
+    },
+    {
+      "name": "up. Slipstream CLPool, the implementation every up. pool is a clone of, Robinhood Chain",
+      "abi": "bound/up/CLPool.json",
+      "chain": 4663,
+      "addresses": [
+        "0x11725976bf1f38c4ab78d1f480bc5883d70d9dc3"
+      ],
+      "factories": [
+        "0x1ac9db4a2608ba45d6127b1737949b51bb54b7f3",
+        "0x12f316b4696165d380d263a3715cb03800c2ae4f"
+      ]
+    },
+    {
+      "name": "up. CLFactory, Robinhood Chain",
+      "abi": "bound/up/CLFactory.json",
+      "chain": 4663,
+      "addresses": [
+        "0x1ac9db4a2608ba45d6127b1737949b51bb54b7f3"
+      ]
+    }
+  ]
+}
