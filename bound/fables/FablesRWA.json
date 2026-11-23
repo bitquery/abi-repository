@@ -94,6 +94,11 @@
     "inputs": []
   },
   {
+    "name": "DstModeDisagreesWithClock",
+    "type": "error",
+    "inputs": []
+  },
+  {
     "name": "EmptyPoke",
     "type": "error",
     "inputs": []
@@ -129,7 +134,12 @@
     "inputs": []
   },
   {
-    "name": "InvalidConfig",
+    "name": "InvalidDayOverride",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "InvalidFloorConfig",
     "type": "error",
     "inputs": []
   },
@@ -140,6 +150,11 @@
   },
   {
     "name": "InvalidMsgValue",
+    "type": "error",
+    "inputs": []
+  },
+  {
+    "name": "InvalidSessionHours",
     "type": "error",
     "inputs": []
   },
@@ -253,6 +268,17 @@
         "name": "token",
         "type": "address",
         "internalType": "address"
+      }
+    ]
+  },
+  {
+    "name": "TooManyDayOverrides",
+    "type": "error",
+    "inputs": [
+      {
+        "name": "marks",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ]
   },
@@ -416,6 +442,31 @@
     "anonymous": false
   },
   {
+    "name": "DayOverridesSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "PoolId"
+      },
+      {
+        "name": "yearMonth",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "packed",
+        "type": "uint64",
+        "indexed": false,
+        "internalType": "uint64"
+      }
+    ],
+    "anonymous": false
+  },
+  {
     "name": "Deposited",
     "type": "event",
     "inputs": [
@@ -474,6 +525,62 @@
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "DstModeSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "PoolId"
+      },
+      {
+        "name": "mode",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum SessionLib.DstMode"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "EarlyCloseSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "PoolId"
+      },
+      {
+        "name": "y",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "m",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "d",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "closeSec",
+        "type": "uint32",
+        "indexed": false,
+        "internalType": "uint32"
       }
     ],
     "anonymous": false
@@ -756,16 +863,57 @@
         "internalType": "PoolId"
       },
       {
-        "name": "floorPips",
-        "type": "uint24",
+        "name": "config",
+        "type": "tuple",
         "indexed": false,
-        "internalType": "uint24"
-      },
-      {
-        "name": "flatPips",
-        "type": "uint24",
-        "indexed": false,
-        "internalType": "uint24"
+        "components": [
+          {
+            "name": "openFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "overnightFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closedFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "spikeMult",
+            "type": "uint8",
+            "internalType": "uint8"
+          },
+          {
+            "name": "closedSpike",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "descentWindow",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closeBefore",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeAfter",
+            "type": "uint32",
+            "internalType": "uint32"
+          }
+        ],
+        "internalType": "struct SessionLib.FloorConfig"
       },
       {
         "name": "maxFee",
@@ -791,6 +939,31 @@
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "SessionHoursSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "PoolId"
+      },
+      {
+        "name": "openSec",
+        "type": "uint32",
+        "indexed": false,
+        "internalType": "uint32"
+      },
+      {
+        "name": "closeSec",
+        "type": "uint32",
+        "indexed": false,
+        "internalType": "uint32"
       }
     ],
     "anonymous": false
@@ -947,6 +1120,32 @@
     "stateMutability": "view"
   },
   {
+    "name": "MAX_DAY_OVERRIDES",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MAX_DESCENT_WINDOW",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
     "name": "MAX_PAUSE",
     "type": "function",
     "inputs": [],
@@ -986,6 +1185,58 @@
     "stateMutability": "view"
   },
   {
+    "name": "MAX_SESSION_LENGTH",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MAX_SESSION_SHIFT",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MAX_SPIKE_MULT",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "uint8"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MIN_EARLY_CLOSE_LENGTH",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
     "name": "MIN_POOL_FEE",
     "type": "function",
     "inputs": [],
@@ -994,6 +1245,19 @@
         "name": "",
         "type": "uint24",
         "internalType": "uint24"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "MIN_SESSION_LENGTH",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
       }
     ],
     "stateMutability": "view"
@@ -1126,150 +1390,6 @@
         "name": "",
         "type": "address",
         "internalType": "address"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "name": "beforeInitialize",
-    "type": "function",
-    "inputs": [
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "key",
-        "type": "tuple",
-        "components": [
-          {
-            "name": "currency0",
-            "type": "address",
-            "internalType": "Currency"
-          },
-          {
-            "name": "currency1",
-            "type": "address",
-            "internalType": "Currency"
-          },
-          {
-            "name": "fee",
-            "type": "uint24",
-            "internalType": "uint24"
-          },
-          {
-            "name": "tickSpacing",
-            "type": "int24",
-            "internalType": "int24"
-          },
-          {
-            "name": "hooks",
-            "type": "address",
-            "internalType": "contract IHooks"
-          }
-        ],
-        "internalType": "struct PoolKey"
-      },
-      {
-        "name": "",
-        "type": "uint160",
-        "internalType": "uint160"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes4",
-        "internalType": "bytes4"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "name": "beforeSwap",
-    "type": "function",
-    "inputs": [
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "key",
-        "type": "tuple",
-        "components": [
-          {
-            "name": "currency0",
-            "type": "address",
-            "internalType": "Currency"
-          },
-          {
-            "name": "currency1",
-            "type": "address",
-            "internalType": "Currency"
-          },
-          {
-            "name": "fee",
-            "type": "uint24",
-            "internalType": "uint24"
-          },
-          {
-            "name": "tickSpacing",
-            "type": "int24",
-            "internalType": "int24"
-          },
-          {
-            "name": "hooks",
-            "type": "address",
-            "internalType": "contract IHooks"
-          }
-        ],
-        "internalType": "struct PoolKey"
-      },
-      {
-        "name": "params",
-        "type": "tuple",
-        "components": [
-          {
-            "name": "zeroForOne",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "amountSpecified",
-            "type": "int256",
-            "internalType": "int256"
-          },
-          {
-            "name": "sqrtPriceLimitX96",
-            "type": "uint160",
-            "internalType": "uint160"
-          }
-        ],
-        "internalType": "struct IPoolManager.SwapParams"
-      },
-      {
-        "name": "",
-        "type": "bytes",
-        "internalType": "bytes"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes4",
-        "internalType": "bytes4"
-      },
-      {
-        "name": "",
-        "type": "int256",
-        "internalType": "BeforeSwapDelta"
-      },
-      {
-        "name": "",
-        "type": "uint24",
-        "internalType": "uint24"
       }
     ],
     "stateMutability": "view"
@@ -1516,6 +1636,25 @@
     "stateMutability": "nonpayable"
   },
   {
+    "name": "closeSec",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
     "name": "currentFee",
     "type": "function",
     "inputs": [
@@ -1535,6 +1674,40 @@
         "name": "",
         "type": "uint24",
         "internalType": "uint24"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "dayOverride",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "y",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "m",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "d",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "enum MarketCalendar.DayOverride"
       }
     ],
     "stateMutability": "view"
@@ -1655,6 +1828,59 @@
     "stateMutability": "view"
   },
   {
+    "name": "dstMode",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "enum SessionLib.DstMode"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "earlyClose",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "y",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "m",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "d",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
     "name": "effectiveClaimFee",
     "type": "function",
     "inputs": [
@@ -1674,6 +1900,82 @@
     "stateMutability": "view"
   },
   {
+    "name": "feeFloorAt",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "cfg",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "openFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "overnightFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closedFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "spikeMult",
+            "type": "uint8",
+            "internalType": "uint8"
+          },
+          {
+            "name": "closedSpike",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "descentWindow",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closeBefore",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeAfter",
+            "type": "uint32",
+            "internalType": "uint32"
+          }
+        ],
+        "internalType": "struct SessionLib.FloorConfig"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
     "name": "ffFeeSink",
     "type": "function",
     "inputs": [],
@@ -1687,7 +1989,7 @@
     "stateMutability": "view"
   },
   {
-    "name": "flatFee",
+    "name": "floorConfig",
     "type": "function",
     "inputs": [
       {
@@ -1699,8 +2001,55 @@
     "outputs": [
       {
         "name": "",
-        "type": "uint24",
-        "internalType": "uint24"
+        "type": "tuple",
+        "components": [
+          {
+            "name": "openFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "overnightFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closedFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "spikeMult",
+            "type": "uint8",
+            "internalType": "uint8"
+          },
+          {
+            "name": "closedSpike",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "descentWindow",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closeBefore",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeAfter",
+            "type": "uint32",
+            "internalType": "uint32"
+          }
+        ],
+        "internalType": "struct SessionLib.FloorConfig"
       }
     ],
     "stateMutability": "view"
@@ -1770,6 +2119,25 @@
         "name": "cap",
         "type": "uint24",
         "internalType": "uint24"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "openSec",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint32",
+        "internalType": "uint32"
       }
     ],
     "stateMutability": "view"
@@ -2195,6 +2563,30 @@
     "stateMutability": "view"
   },
   {
+    "name": "sessionAt",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "enum SessionLib.Session"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
     "name": "setAuthority",
     "type": "function",
     "inputs": [
@@ -2321,6 +2713,29 @@
     "stateMutability": "nonpayable"
   },
   {
+    "name": "setDayOverrides",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "yearMonth",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "packed",
+        "type": "uint64",
+        "internalType": "uint64"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
     "name": "setDistributor",
     "type": "function",
     "inputs": [
@@ -2333,6 +2748,57 @@
         "name": "distributor_",
         "type": "address",
         "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setDstMode",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "mode",
+        "type": "uint8",
+        "internalType": "enum SessionLib.DstMode"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setEarlyClose",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "y",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "m",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "d",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "closeSec_",
+        "type": "uint32",
+        "internalType": "uint32"
       }
     ],
     "outputs": [],
@@ -2480,14 +2946,56 @@
         "internalType": "struct PoolKey"
       },
       {
-        "name": "floorPips",
-        "type": "uint24",
-        "internalType": "uint24"
-      },
-      {
-        "name": "flatPips",
-        "type": "uint24",
-        "internalType": "uint24"
+        "name": "config",
+        "type": "tuple",
+        "components": [
+          {
+            "name": "openFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "overnightFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closedFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "spikeMult",
+            "type": "uint8",
+            "internalType": "uint8"
+          },
+          {
+            "name": "closedSpike",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "descentWindow",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeFloor",
+            "type": "uint24",
+            "internalType": "uint24"
+          },
+          {
+            "name": "closeBefore",
+            "type": "uint32",
+            "internalType": "uint32"
+          },
+          {
+            "name": "closeAfter",
+            "type": "uint32",
+            "internalType": "uint32"
+          }
+        ],
+        "internalType": "struct SessionLib.FloorConfig"
       },
       {
         "name": "cap",
@@ -2538,6 +3046,29 @@
         "name": "duration",
         "type": "uint256",
         "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "setSessionHours",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "poolId",
+        "type": "bytes32",
+        "internalType": "PoolId"
+      },
+      {
+        "name": "openSec_",
+        "type": "uint32",
+        "internalType": "uint32"
+      },
+      {
+        "name": "closeSec_",
+        "type": "uint32",
+        "internalType": "uint32"
       }
     ],
     "outputs": [],
@@ -2725,25 +3256,6 @@
         "name": "",
         "type": "bool",
         "internalType": "bool"
-      }
-    ],
-    "stateMutability": "nonpayable"
-  },
-  {
-    "name": "unlockCallback",
-    "type": "function",
-    "inputs": [
-      {
-        "name": "rawData",
-        "type": "bytes",
-        "internalType": "bytes"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes",
-        "internalType": "bytes"
       }
     ],
     "stateMutability": "nonpayable"
