@@ -419,6 +419,39 @@
         "0xa4570c37590e45f0b06898123d4de16307a32080",
         "0x8af95932ec4484fb10c641a4cbcf19a798cb2080"
       ]
+    },
+    {
+      "name": "Solidly V3 factory, Ethereum",
+      "abi": "bound/solidly_v3/SolidlyV3Factory.json",
+      "chain": 1,
+      "addresses": [
+        "0x70fe4a44ea505cfa3a57b95cf2862d4fd5f0f687",
+        "0x735bb16affe83a3dc4dc418abccf179617cf9ff2"
+      ]
+    },
+    {
+      "name": "Solidly V3 factory, Optimism",
+      "abi": "bound/solidly_v3/SolidlyV3Factory.json",
+      "chain": 10,
+      "addresses": [
+        "0x70fe4a44ea505cfa3a57b95cf2862d4fd5f0f687"
+      ]
+    },
+    {
+      "name": "Solidly V3 factory, Base",
+      "abi": "bound/solidly_v3/SolidlyV3Factory.json",
+      "chain": 8453,
+      "addresses": [
+        "0x70fe4a44ea505cfa3a57b95cf2862d4fd5f0f687"
+      ]
+    },
+    {
+      "name": "Solidly V3 factory, Arbitrum",
+      "abi": "bound/solidly_v3/SolidlyV3Factory.json",
+      "chain": 42161,
+      "addresses": [
+        "0x70fe4a44ea505cfa3a57b95cf2862d4fd5f0f687"
+      ]
     }
   ]
 }
