@@ -48,12 +48,12 @@
   },
   {
     "inputs": [],
-    "name": "NotAuthorized",
+    "name": "NotInitializing",
     "type": "error"
   },
   {
     "inputs": [],
-    "name": "NotInitializing",
+    "name": "OnlySettlement",
     "type": "error"
   },
   {
@@ -80,6 +80,27 @@
   },
   {
     "inputs": [],
+    "name": "QuoteExpired",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "QuoteMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "SafeERC20FailedOperation",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "UUPSUnauthorizedCallContext",
     "type": "error"
   },
@@ -95,16 +116,57 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "WrappedQuoteUnsupported",
+    "type": "error"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
         "indexed": true,
+        "internalType": "bytes32",
+        "name": "quoteId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
         "internalType": "address",
-        "name": "escrow",
+        "name": "maker",
         "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "taker",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "makerBuyToken",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "makerSellToken",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "makerBuyAmount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "makerSellAmount",
+        "type": "uint256"
       }
     ],
-    "name": "EscrowSet",
+    "name": "ArcusRfqFilled",
     "type": "event"
   },
   {
@@ -153,23 +215,43 @@
     "type": "event"
   },
   {
-    "anonymous": false,
-    "inputs": [
+    "inputs": [],
+    "name": "ARCUS_RFQ_QUOTE_TYPEHASH",
+    "outputs": [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "underlying",
-        "type": "address"
-      },
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "ARCUS_RFQ_QUOTE_WITNESS_TYPE_STRING",
+    "outputs": [
       {
-        "indexed": true,
-        "internalType": "address",
-        "name": "wrappedToken",
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "PERMIT2",
+    "outputs": [
+      {
+        "internalType": "contract IPermit2",
+        "name": "",
         "type": "address"
       }
     ],
-    "name": "WrappedTokenCreated",
-    "type": "event"
+    "stateMutability": "view",
+    "type": "function"
   },
   {
     "inputs": [],
@@ -185,108 +267,123 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "authorizedEscrow",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "beacon",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "address",
-        "name": "underlying",
+        "name": "taker",
         "type": "address"
-      }
-    ],
-    "name": "createWrappedToken",
-    "outputs": [
+      },
       {
         "internalType": "address",
-        "name": "wrappedToken",
+        "name": "inputToken",
         "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "inputAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "outputToken",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "minOutputAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes",
+        "name": "executorData",
+        "type": "bytes"
+      }
+    ],
+    "name": "execute",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "outputAmount",
+        "type": "uint256"
       }
     ],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "deliveryAuthority",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "beacon_",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "deliveryAuthority_",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "initialOwner",
-        "type": "address"
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "quoteId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "maker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "taker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "makerBuyToken",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "makerSellToken",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "makerBuyAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "makerSellAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "nonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "validUntil",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "wrapped",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct ArcusRfqQuote",
+        "name": "quote",
+        "type": "tuple"
       }
     ],
-    "name": "initialize",
-    "outputs": [],
-    "stateMutability": "nonpayable",
+    "name": "hashArcusRfqQuote",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "pure",
     "type": "function"
   },
   {
     "inputs": [],
     "name": "owner",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "underlying",
-        "type": "address"
-      }
-    ],
-    "name": "predictWrappedToken",
     "outputs": [
       {
         "internalType": "address",
@@ -318,16 +415,16 @@
     "type": "function"
   },
   {
-    "inputs": [
+    "inputs": [],
+    "name": "settlement",
+    "outputs": [
       {
         "internalType": "address",
-        "name": "escrow",
+        "name": "",
         "type": "address"
       }
     ],
-    "name": "setEscrow",
-    "outputs": [],
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
