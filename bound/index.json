@@ -510,6 +510,22 @@
       "addresses": [
         "0x78589e876edcebdce72ee3436ab3c9ad3a7cef2d"
       ]
+    },
+    {
+      "name": "LunarBase BNB/USDT pool (proxy), BNB Smart Chain",
+      "abi": "bound/lunarbase/Pool.json",
+      "chain": 56,
+      "addresses": [
+        "0x00007904d186680c709519e71f4dc3e2df8f1b99"
+      ]
+    },
+    {
+      "name": "LunarBase ETH/USDC pool (proxy), Base",
+      "abi": "bound/lunarbase/Pool.json",
+      "chain": 8453,
+      "addresses": [
+        "0x0000efc4ec03a7c47d3a38a9be7ff1d52dd01b99"
+      ]
     }
   ]
 }
